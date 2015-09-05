@@ -65,10 +65,6 @@ function login() {
 
     PushbotsPlugin.setAlias(username);
    
-    PushbotsPlugin.getToken(function(token) {
-        console.log(token);
-    });
-
     console.log(PushbotsPlugin.getToken());
 
 }
