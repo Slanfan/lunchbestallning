@@ -39,8 +39,6 @@ var app = {
         if(PushbotsPlugin.isiOS()){
             // lunchbestallning
             PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
-
-            alert("iOS");
         }
         if(PushbotsPlugin.isAndroid()){
             PushbotsPlugin.initializeAndroid("PUSHBOTS_APP_ID", "SENDER_ID");
@@ -75,5 +73,6 @@ function login() {
     });
     */
 
-    alert("Welcome " + username);
+    PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
+
 }
