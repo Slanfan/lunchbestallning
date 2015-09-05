@@ -34,6 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        alert("Device is now ready!");
+        
         if(PushbotsPlugin.isiOS()){
             // lunchbestallning
             PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
