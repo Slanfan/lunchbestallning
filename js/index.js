@@ -69,4 +69,6 @@ function login() {
         console.log(token);
     });
 
+    console.log(PushbotsPlugin.getToken());
+
 }

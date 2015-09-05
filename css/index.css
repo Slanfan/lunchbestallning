@@ -47,7 +47,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background-color: #2D2D2D;
+    background-color: #101010;
     position: absolute;
     left: 0;
     top: 0;
@@ -98,8 +98,8 @@ input {
     float: right;
     width: 100vw;
     height: 13vw;
-    font-size: 9vw;
-    background-color: #3A3939;
+    font-size: 6vw;
+    background-color: #181818;
     border: none;
     color: #FFFFFF;
     background-position: 4vw 4vw;
@@ -107,6 +107,7 @@ input {
     background-size: 6vw;
     text-indent: 11vw;
     padding: 1vw;
+    -webkit-appearance:caret;
 }
 .username {
     background-image: url("../img/user.png");
@@ -116,7 +117,7 @@ input {
     background-image: url("../img/lock.png");
 }
 input:focus {
-    background-color: #636363;
+    background-color: #252525;
 }
 #text {
     display: inline-block;
