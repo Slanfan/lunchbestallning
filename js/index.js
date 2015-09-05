@@ -42,8 +42,6 @@ var app = {
         }
         if(PushbotsPlugin.isAndroid()){
             PushbotsPlugin.initializeAndroid("PUSHBOTS_APP_ID", "SENDER_ID");
-
-            alert("Android");
         }
     },
     // Update DOM on a Received Event
