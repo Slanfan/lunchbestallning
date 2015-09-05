@@ -64,7 +64,7 @@ function login() {
     var password = $('#password').val();
 
     PushbotsPlugin.setAlias(username);
-   
+    PushbotsPlugin.resetBadge();
     console.log(PushbotsPlugin.getToken());
 
 }
