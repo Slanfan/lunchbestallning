@@ -63,14 +63,10 @@ function login() {
     var username = $('#username').val();
     var password = $('#password').val();
 
-    /*
     PushbotsPlugin.setAlias(username);
    
     PushbotsPlugin.getToken(function(token) {
         console.log(token);
     });
-    */
-
-    PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
 
 }
