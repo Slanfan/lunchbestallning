@@ -33,8 +33,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-        PushbotsPlugin.resetBadge();
 
         if(PushbotsPlugin.isiOS()){
             // lunchbestallning
@@ -43,17 +41,8 @@ var app = {
         if(PushbotsPlugin.isAndroid()){
             PushbotsPlugin.initializeAndroid("PUSHBOTS_APP_ID", "SENDER_ID");
         }
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        PushbotsPlugin.resetBadge();
     }
 };
 
@@ -64,7 +53,7 @@ function login() {
     var password = $('#password').val();
 
     PushbotsPlugin.setAlias(username);
-    PushbotsPlugin.resetBadge();
+    //PushbotsPlugin.resetBadge();
     console.log(PushbotsPlugin.getToken());
 
 }
