@@ -34,7 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert("Device is now ready!");
+        PushbotsPlugin.resetBadge();
 
         if(PushbotsPlugin.isiOS()){
             // lunchbestallning
