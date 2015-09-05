@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         alert("Device is now ready!");
-        
+
         if(PushbotsPlugin.isiOS()){
             // lunchbestallning
             PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
@@ -67,9 +67,13 @@ function login() {
     var username = $('#username').val();
     var password = $('#password').val();
 
+    /*
     PushbotsPlugin.setAlias(username);
    
     PushbotsPlugin.getToken(function(token) {
         console.log(token);
     });
+    */
+
+    alert("Welcome " + username);
 }
