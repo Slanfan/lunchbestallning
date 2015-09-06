@@ -143,10 +143,13 @@ video{
   transform:rotate(-90deg);
 }
 .app-video {
-    width: 100vh;
-    height: 100vw;
+    width: 110vh;
+    height: 110vw;
     position: fixed;
-    bottom: 22vh;
-    right: -39vw;
+    bottom: 20vh;
+    right: -47.5vw;
     z-index: 100;
+}
+video::-webkit-media-controls {
+    display:none !important;
 }
