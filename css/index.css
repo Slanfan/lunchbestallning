@@ -107,7 +107,7 @@ input {
     background-size: 6vw;
     text-indent: 11vw;
     padding: 1vw;
-    -webkit-appearance:caret;
+    
 }
 .username {
     background-image: url("../img/user.png");

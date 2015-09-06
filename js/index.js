@@ -47,13 +47,3 @@ var app = {
 };
 
 app.initialize();
-
-function login() {
-    var username = $('#username').val();
-    var password = $('#password').val();
-
-    PushbotsPlugin.setAlias(username);
-    //PushbotsPlugin.resetBadge();
-    console.log(PushbotsPlugin.getToken());
-
-}
