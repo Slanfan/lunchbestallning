@@ -29,6 +29,7 @@ function login() {
 	});
 
     // show main app and hide login
+    $('#login').hide();
     $('#main').show();
 
 }
@@ -38,6 +39,7 @@ function logout() {
 	// remove stores userinformation
 	localStorage.removeItem("username");
 
+	// show login and hide main app
 	$('#main').hide();
 	$('#login').show();
 }
