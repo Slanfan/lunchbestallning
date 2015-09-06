@@ -35,10 +35,19 @@
     </head>
     <body>
 
-        <div class="app">
-           <video class="app-video" autoplay loop webkit-playsinline preload="true">
+        <div class="app" id="start">
+            <img class="logo-lunch" src="img/logo-lunch.png">
+            <video class="app-video" autoplay loop webkit-playsinline preload="true">
                 <source src="img/main.mp4" type="video/mp4" />
-           </video>
+            </video>
+            <div class="start-footer">
+                <button class="start-login" onclick="show_login()">
+                    logga in
+                </button>
+                <button class="start-help" onclick="show_help()">
+                    hjälp
+                </button>
+            </div>  
         </div>
         
         <div class="app" id="login">
@@ -48,7 +57,6 @@
                 <input type="password" class="password" placeholder="Lösenord" id="password">
                 <button type="button" onclick="login()">logga in</button>
             </div>
-            <div id="text">Token?</div>
         </div>
 
         <div class="app" id="main">

@@ -51,9 +51,10 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100vh;
-    width: 100vw;
+    bottom: 0;
+    width: 101vw;
     text-align: center;
+    display: none;
 }
 
 /* Landscape layout (with min-width) */
@@ -80,18 +81,15 @@ button {
     float: right;
     width: 100vw;
     height: 13vw;
-    font-size: 5vw;
-    background-color: #35DC20;
+    font-size: 4vw;
+    background-color: #8C9C2E;
     border: none;
     color: #CBFFD3;
-    background-position: 4vw 4vw;
-    background-repeat: no-repeat;
-    background-size: 3vh;
     padding: 1vw;
     text-transform: uppercase;
 }
 button:active {
-    background-color: #77E669;
+    background-color: #9EAF3A;
 }
 input {
     display: inline-block;
@@ -135,7 +133,7 @@ input:focus {
     top: 0;
     left: 0;
 }
-video{
+video {
   -moz-transform:rotate(-90deg);
   -webkit-transform:rotate(-90deg);
   -o-transform:rotate(-90deg);
@@ -148,8 +146,51 @@ video{
     position: fixed;
     bottom: 20vh;
     right: -47.5vw;
-    z-index: 100;
+    z-index: 1;
 }
 video::-webkit-media-controls {
     display:none !important;
+}
+.logo-lunch {
+    z-index: 10;
+    position: relative;
+    margin-top: 10vh;
+}
+.start-login {
+    position: absolute;
+    width: 51vw;
+    background-color: #8C9C2E;
+    bottom: 0;
+    top: 0;
+}
+.start-help {
+    position: absolute;
+    width: 50vw;
+    background-color: #202020;
+    left: 50vw;
+    bottom: 0;
+    top: 0;
+}
+.start-footer {
+    bottom: -1px;
+    position: absolute;
+    z-index: 10;
+    color: white;
+    text-transform: uppercase;
+    height: 12vw;
+}
+.start-login:active  {
+    background-color: #9EAF3A;
+}
+.start-help:active {
+    background-color: #303030;
+}
+#start {
+    z-index: 0;
+}
+#login {
+    z-index: 100;
+}
+#main {
+    z-index: 200;
 }

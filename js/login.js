@@ -1,13 +1,9 @@
 
 $(document).ready(function() {
 	if(localStorage.getItem("username") != null) {
-		//alert("auto login (" + localStorage.getItem("username") + ")");
-		// hide login
-		$('#login').hide();
+		$('#main').show();
 	} else {
-		// hide main
-		$('#main').hide();
-		//alert("need login");
+		$('#start').show();
 	}
 });
 
@@ -21,8 +17,8 @@ function login() {
     localStorage.setItem("username", username);
 
     // show main app and hide login
-    $('#login').hide();
     $('#main').show();
+    $('#login').hide();
 
     PushbotsPlugin.setAlias(username);
     // PushbotsPlugin.resetBadge();
@@ -41,5 +37,10 @@ function logout() {
 
 	// show login and hide main app
 	$('#main').hide();
+    $('#login').hide();
+}
+
+function show_login() {
+	// show login screen
 	$('#login').show();
 }
