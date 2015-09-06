@@ -24,8 +24,9 @@ function login() {
     // PushbotsPlugin.resetBadge();
     console.log(PushbotsPlugin.getToken());
 
-    // show main app
-    $('#main').slideUp('slow');
+    // show main app and hide login
+    $('#main').show();
+    $('#login').hide();
 }
 
 function logout() {
