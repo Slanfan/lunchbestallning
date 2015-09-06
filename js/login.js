@@ -20,6 +20,10 @@ function login() {
     // store user information locally
     localStorage.setItem("username", username);
 
+    // show main app and hide login
+    $('#login').hide();
+    $('#main').show();
+
     PushbotsPlugin.setAlias(username);
     // PushbotsPlugin.resetBadge();
 
@@ -27,10 +31,6 @@ function login() {
 	PushbotsPlugin.getToken(function(token){
     	console.log(token);
 	});
-
-    // show main app and hide login
-    $('#login').hide();
-    $('#main').show();
 
 }
 
