@@ -22,15 +22,22 @@ function login() {
 
     PushbotsPlugin.setAlias(username);
     // PushbotsPlugin.resetBadge();
-    console.log(PushbotsPlugin.getToken());
+
+    //Get device token
+	PushbotsPlugin.getToken(function(token){
+    	console.log(token);
+	});
 
     // show main app and hide login
     $('#main').show();
-    $('#login').hide();
+
 }
 
 function logout() {
 
 	// remove stores userinformation
 	localStorage.removeItem("username");
+
+	$('#main').hide();
+	$('#login').show();
 }
