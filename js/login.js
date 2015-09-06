@@ -1,10 +1,13 @@
 
 $(document).ready(function() {
 	if(localStorage.getItem("username") != null) {
-		alert("auto login (" + localStorage.getItem("username") + ")");
+		//alert("auto login (" + localStorage.getItem("username") + ")");
+		// hide login
 		$('#login').hide();
 	} else {
-		alert("need login");
+		// hide main
+		$('#main').hide();
+		//alert("need login");
 	}
 });
 
@@ -18,8 +21,11 @@ function login() {
     localStorage.setItem("username", username);
 
     PushbotsPlugin.setAlias(username);
-    //PushbotsPlugin.resetBadge();
+    // PushbotsPlugin.resetBadge();
     console.log(PushbotsPlugin.getToken());
+
+    // show main app
+    $('#main').slideUp('slow');
 }
 
 function logout() {
