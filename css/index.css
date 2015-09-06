@@ -126,3 +126,27 @@ input:focus {
     font-size: 12vw;
     margin-top: 20vh;
 }
+.video-container {
+    z-index: 1000;
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+video{
+  -moz-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  transform:rotate(-90deg);
+}
+.app-video {
+    width: 100vh;
+    height: 100vw;
+    position: fixed;
+    bottom: 22vh;
+    right: -39vw;
+    z-index: 100;
+}
