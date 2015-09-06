@@ -12,7 +12,7 @@ function login() {
 	var username = $('#username').val();
     var password = $('#password').val();
 
-    localStorage,setItem("username", username);
+    localStorage.setItem("username", username);
 
     PushbotsPlugin.setAlias(username);
     //PushbotsPlugin.resetBadge();
