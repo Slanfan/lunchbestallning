@@ -24,16 +24,20 @@ function login() {
     	data: data,
     	dataType: "json",
     	type: "GET",
-    	success: function(response) {
+    	success: function() {
     		// update textinfo
     		$('#info-text').text('anslutning upprättad');
     	},
-    	error: function(response) {
+    	error: function() {
     		// update textinfo
     		$('#info-text').text('anslutning misslyckades');
     	},
     	complete: function(response) {
-    		alert('ajax done');
+    		if(response == 'success') {
+    			alert('Success');
+    		} else {
+    			alert('Error');
+    		}
     	}
     });
 
