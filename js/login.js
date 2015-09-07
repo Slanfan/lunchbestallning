@@ -9,15 +9,40 @@ $(document).ready(function() {
 
 function login() {
 
+	// uppdatera textinfo
+	$('#info-text').text('kontaktar server');
+
 	// get input information
-	var username = $('#username').val();
+	var username = $('#username').val().toLowerCase();
     var password = $('#password').val();
+    var ajaxResponse;
+    var data = {"username": username, "password": password};
+
+    // connect to database to check login
+    $.ajax({
+    	url: 'http://www.lunchbestallning.se/app/login.php',
+    	data: data,
+    	dataType: "json",
+    	type: "GET",
+    	success: function(response) {
+    		// update textinfo
+    		$('#info-text').text('anslutning upprättad');
+    	},
+    	error: function(response) {
+    		// update textinfo
+    		$('#info-text').text('anslutning misslyckades');
+    	},
+    	complete: function(response) {
+    		alert('ajax done');
+    	}
+    });
 
     // store user information locally
     localStorage.setItem("username", username);
 
     // show main app and hide login
-    $('#main').show();
+    /*
+    $('#main').fadeIn();
     $('#login').hide();
 
     PushbotsPlugin.setAlias(username);
@@ -27,6 +52,7 @@ function login() {
 	PushbotsPlugin.getToken(function(token){
     	console.log(token);
 	});
+*/
 
 }
 
@@ -42,5 +68,10 @@ function logout() {
 
 function show_login() {
 	// show login screen
-	$('#login').show();
+	$('#login').show("slide", { direction: "right" }, 500);
+}
+
+function hide_login() {
+	// hide login screen
+	$('#login').hide("slide", { direction: "right" }, 300);
 }

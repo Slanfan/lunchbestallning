@@ -68,13 +68,15 @@ body {
 }
 
 h1 {
-    font-size: 6vh;
+    font-size: 6vw;
     font-weight: normal;
     margin: 0px;
     overflow: visible;
     padding: 0px;
     text-align: center;
     color: white;
+    height: 25vw;
+    padding-top: 2vh;
 }
 button {
     display: inline-block;
@@ -84,7 +86,7 @@ button {
     font-size: 4vw;
     background-color: #8C9C2E;
     border: none;
-    color: #CBFFD3;
+    color: white;
     padding: 1vw;
     text-transform: uppercase;
 }
@@ -176,7 +178,6 @@ video::-webkit-media-controls {
     bottom: -1px;
     position: absolute;
     z-index: 10;
-    color: white;
     text-transform: uppercase;
     height: 12vw;
 }
@@ -202,4 +203,24 @@ video::-webkit-media-controls {
     left: 0;
     right: 0;
     overflow: hidden;
+}
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 4vw;
+}
+.back-button img {
+    height: 8vw;
+}
+.info-box {
+    display: inline-block;
+    width: 100vw;
+    margin-top: 20vw;
+    color: #FFFFFF;
+    font-size: 4vw;
+}
+.info-box p {
+    margin: 0;
+    padding: 0;
 }
