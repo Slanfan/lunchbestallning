@@ -213,12 +213,15 @@ video::-webkit-media-controls {
 .back-button img {
     height: 8vw;
 }
-.info-box {
+.info-container {
     display: inline-block;
     width: 100vw;
     margin-top: 20vw;
     color: #FFFFFF;
     font-size: 4vw;
+}
+.info-box {
+    display: none;
 }
 .info-box p {
     margin: 0;

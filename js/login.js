@@ -9,8 +9,10 @@ $(document).ready(function() {
 
 function login() {
 
-	// uppdatera textinfo
+	// uppdatera textinfo och visa loader
+	$('.info-box').show();
 	$('#info-text').text('kontaktar server');
+
 
 	// get input information
 	var username = $('#username').val().toLowerCase();
@@ -34,30 +36,34 @@ function login() {
     	},
     	complete: function(response) {
     		if(response == 'success') {
-    			alert('Success');
+    			// store user information locally
+			    localStorage.setItem("username", username);
+			    PushbotsPlugin.setAlias(username);
+			    // PushbotsPlugin.resetBadge();
+			    //Get device token
+				PushbotsPlugin.getToken(function(token){
+			    	console.log(token);
+				});
+
+    			// update textinfo and fade out box
+    			$('#info-text').text('inloggning lyckades');
+    			setTimeout(function() {
+    				$('#info-box').fadeOut('slow');
+    			}, 2000);
+    			setTimeout(function() {
+    				// show main and hide login
+				    $('#main').fadeIn();
+				    $('#login').hide();
+    			}, 2500);
     		} else {
-    			alert('Error');
+    			// update textinfo and fade out box
+    			$('#info-text').text('inloggning misslyckades, försök igen');
+    			setTimeout(function() {
+    				$('.info-box').fadeOut('slow');
+    			}, 2000);
     		}
     	}
     });
-
-    // store user information locally
-    localStorage.setItem("username", username);
-
-    // show main app and hide login
-    /*
-    $('#main').fadeIn();
-    $('#login').hide();
-
-    PushbotsPlugin.setAlias(username);
-    // PushbotsPlugin.resetBadge();
-
-    //Get device token
-	PushbotsPlugin.getToken(function(token){
-    	console.log(token);
-	});
-*/
-
 }
 
 function logout() {
