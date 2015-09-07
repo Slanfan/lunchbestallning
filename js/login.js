@@ -35,6 +35,7 @@ function login() {
     		$('#info-text').text('anslutning misslyckades');
     	},
     	complete: function(response) {
+    		alert(response);
     		if(response == 'success') {
     			// store user information locally
 			    localStorage.setItem("username", username);
