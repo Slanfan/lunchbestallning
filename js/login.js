@@ -42,16 +42,14 @@ function login() {
     		console.log(data);
     		console.log(data.responseJSON);
 
-    		var response = JSON.parse(data);
-
-    		console.log('Result: ' + response.result);
-    		console.log('Company: ' + response.company);
-    		console.log('Number: ' + response.number);
-    		if(response.result == 'success') {
+    		console.log('Result: ' + data.responseJSON.result);
+    		console.log('Company: ' + data.responseJSON.company);
+    		console.log('Number: ' + data.responseJSON.number);
+    		if(data.responseJSON.result == 'success') {
     			// store user information locally
 			    localStorage.setItem("username", username);
-			    localStorage.setItem("company", response.company);
-			    localStorage.setItem("employee_number", response.number);
+			    localStorage.setItem("company", data.responseJSON.company);
+			    localStorage.setItem("employee_number", data.responseJSON.number);
 			    PushbotsPlugin.setAlias(username);
 			    // PushbotsPlugin.resetBadge();
 			    //Get device token
