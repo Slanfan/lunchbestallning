@@ -40,6 +40,7 @@ function login() {
     	complete: function(data) {
     		
     		console.log(data);
+    		console.log(data.responseJSON);
 
     		var response = JSON.parse(data);
 
