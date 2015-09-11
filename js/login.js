@@ -38,8 +38,11 @@ function login() {
     		$('#info-text').text('anslutning misslyckades');
     	},
     	complete: function(data) {
-    		var response = JSON.parse(data);
+    		
     		console.log(data);
+
+    		var response = JSON.parse(data);
+
     		console.log('Result: ' + response.result);
     		console.log('Company: ' + response.company);
     		console.log('Number: ' + response.number);
