@@ -16,7 +16,6 @@ function login() {
 	$('.info-box').show();
 	$('#info-text').text('kontaktar server');
 
-
 	// get input information
 	var username = $('#username').val().toLowerCase();
     var password = $('#password').val();
@@ -67,8 +66,13 @@ function login() {
     			setTimeout(function() {
     				// show main and hide login
 				    $('#main').fadeIn();
-				    $('#login').hide();
     			}, 2600);
+    			setTimeout(function() {
+    				// empty inputs and hide login
+    				$('#username').val();
+					$('#password').val();
+					$('#login').hide();
+    			}, 3000)
     		} else {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning misslyckades, försök igen');
@@ -85,9 +89,13 @@ function logout() {
 	// remove stores userinformation
 	localStorage.removeItem("username");
 
-	// show login and hide main app
-	$('#main').hide();
-    $('#login').hide();
+	// hide login and hide main app
+	$('#login').hide();
+	$('#start').show();
+	setTimeout(function() {
+		// fade out main app
+		$('#main').fadeOut('slow');
+	}, 1500);
 }
 
 function show_login() {
