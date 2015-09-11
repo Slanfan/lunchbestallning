@@ -39,7 +39,10 @@ function login() {
     	},
     	complete: function(data) {
     		var response = JSON.parse(data);
-    		alert(response.result);
+    		console.log(data);
+    		console.log('Result: ' + response.result);
+    		console.log('Company: ' + response.company);
+    		console.log('Number: ' + response.number);
     		if(response.result == 'success') {
     			// store user information locally
 			    localStorage.setItem("username", username);
