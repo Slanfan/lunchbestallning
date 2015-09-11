@@ -128,7 +128,10 @@
         <param name="ios-package" value="CDVNotification" />
     </feature>
 
-    
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+
     <content src="index.html" />
     <access origin="*" />
 	<access origin="*.pushbots.com" />
