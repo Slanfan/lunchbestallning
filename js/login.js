@@ -38,8 +38,8 @@ function login() {
     		$('#info-text').text('anslutning misslyckades');
     	},
     	complete: function(response) {
-    		alert(response['result']);
-    		if(response['result'] == 'success') {
+    		alert(response.result);
+    		if(response.result == 'success') {
     			// store user information locally
 			    localStorage.setItem("username", username);
 			    localStorage.setItem("company", response.company);
