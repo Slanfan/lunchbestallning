@@ -1,8 +1,8 @@
 
 $(document).ready(function() {
 
-	PushbotsPlugin.resetBadge();
-	
+	//PushbotsPlugin.resetBadge();
+
 	if(localStorage.getItem("username") != null) {
 		$('#main').show();
 	} else {
@@ -42,8 +42,8 @@ function login() {
     		if(response['result'] == 'success') {
     			// store user information locally
 			    localStorage.setItem("username", username);
-			    localStorage.setItem("company", response['company']);
-			    localStorage.setItem("employee_number", response['number']);
+			    localStorage.setItem("company", response.company);
+			    localStorage.setItem("employee_number", response.number);
 			    PushbotsPlugin.setAlias(username);
 			    // PushbotsPlugin.resetBadge();
 			    //Get device token
