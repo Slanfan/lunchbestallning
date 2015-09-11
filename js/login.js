@@ -37,7 +37,8 @@ function login() {
     		// update textinfo
     		$('#info-text').text('anslutning misslyckades');
     	},
-    	complete: function(response) {
+    	complete: function(data) {
+    		var response = JSON.parse(data);
     		alert(response.result);
     		if(response.result == 'success') {
     			// store user information locally
