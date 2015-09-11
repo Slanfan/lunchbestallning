@@ -47,7 +47,7 @@
     <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <preference name="android-installLocation" value="auto" />
     <!-- allows inline media -->
-    <pre class="lang:default decode:true "><preference name="AllowInlineMediaPlayback" value="true"></preference>
+    <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
     <!-- ios target device -->
     <preference name="target-device" value="handset" />
