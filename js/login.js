@@ -86,5 +86,5 @@ function show_login() {
 
 function hide_login() {
 	// hide login screen
-	$('#login').hide("slide", { direction: "right" }, 300);
+	$('#login').hide("slide", { direction: "right" }, 500);
 }
