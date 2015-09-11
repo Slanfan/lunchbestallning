@@ -61,16 +61,16 @@ function login() {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			setTimeout(function() {
-    				$('#info-box').fadeOut('slow');
+    				$('.info-box').fadeOut('slow');
     			}, 1800);
     			setTimeout(function() {
     				// show main and hide login
-				    $('#main').fadeIn();
+				    $('#main').fadeIn('slow');
     			}, 2600);
     			setTimeout(function() {
     				// empty inputs and hide login
-    				$('#username').val();
-					$('#password').val();
+    				$('#username').val('');
+					$('#password').val('');
 					$('#login').hide();
     			}, 3000)
     		} else {
