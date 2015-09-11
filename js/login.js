@@ -1,5 +1,8 @@
 
 $(document).ready(function() {
+
+	PushbotsPlugin.resetBadge();
+	
 	if(localStorage.getItem("username") != null) {
 		$('#main').show();
 	} else {

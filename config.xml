@@ -48,6 +48,7 @@
     <preference name="android-installLocation" value="auto" />
     <!-- allows inline media -->
     <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
 
     <preference name="StatusBarOverlaysWebView" value="true" />             
     <preference name="StatusBarBackgroundColor" value="#8C9C2E" />
