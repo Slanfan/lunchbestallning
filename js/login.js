@@ -53,20 +53,22 @@ function login() {
 			    PushbotsPlugin.setAlias(username);
 			    // PushbotsPlugin.resetBadge();
 			    //Get device token
+				/*
 				PushbotsPlugin.getToken(function(token){
 			    	console.log(token);
 				});
+				*/
 
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			setTimeout(function() {
     				$('#info-box').fadeOut('slow');
-    			}, 2000);
+    			}, 1800);
     			setTimeout(function() {
     				// show main and hide login
 				    $('#main').fadeIn();
 				    $('#login').hide();
-    			}, 2500);
+    			}, 2600);
     		} else {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning misslyckades, försök igen');
