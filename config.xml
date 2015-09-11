@@ -13,7 +13,7 @@
         Slanfan Development
     </author>
 
-    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="phonegap-version" value="4.2.0" />
     <preference name="permissions" value="none" />
 
     <!-- Customize your app and platform with the preference element. -->
@@ -49,6 +49,8 @@
     <!-- allows inline media -->
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <!-- ios target device -->
+    <preference name="target-device" value="handset" />
 
     <preference name="StatusBarOverlaysWebView" value="true" />             
     <preference name="StatusBarBackgroundColor" value="#8C9C2E" />

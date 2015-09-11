@@ -61,23 +61,23 @@ function login() {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			setTimeout(function() {
-    				$('.info-box').fadeOut('slow');
-    			}, 1800);
+    				$('.info-box').fadeOut(500);
+    			}, 1000);
     			setTimeout(function() {
     				// show main and hide login
-				    $('#main').fadeIn('slow');
-    			}, 2600);
+				    $('#main').fadeIn(900);
+    			}, 2000);
     			setTimeout(function() {
     				// empty inputs and hide login
     				$('#username').val('');
 					$('#password').val('');
 					$('#login').hide();
-    			}, 3000)
+    			}, 3500)
     		} else {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning misslyckades, försök igen');
     			setTimeout(function() {
-    				$('.info-box').fadeOut('slow');
+    				$('.info-box').fadeOut(500);
     			}, 2000);
     		}
     	}
@@ -94,7 +94,7 @@ function logout() {
 	$('#start').show();
 	setTimeout(function() {
 		// fade out main app
-		$('#main').fadeOut('slow');
+		$('#main').fadeOut(900);
 	}, 1500);
 }
 

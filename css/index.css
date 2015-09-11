@@ -135,13 +135,6 @@ input:focus {
     top: 0;
     left: 0;
 }
-video {
-  -moz-transform:rotate(-90deg);
-  -webkit-transform:rotate(-90deg);
-  -o-transform:rotate(-90deg);
-  -ms-transform:rotate(-90deg);
-  transform:rotate(-90deg);
-}
 .app-video {
     width: 110vh;
     height: 110vw;
@@ -149,6 +142,7 @@ video {
     bottom: 20vh;
     right: -47.5vw;
     z-index: 1;
+    -webkit-transform:rotate(-90deg);
 }
 video::-webkit-media-controls {
     display:none !important;
