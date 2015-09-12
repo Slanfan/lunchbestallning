@@ -19,5 +19,9 @@ function load_menu() {
 	  	});
 	});
 	*/
-	$('#todays-menu').append('<div class="menu-item"><div class="menu-item-container"><div class="image-wrapper"><img src="img/menu-icons/menu-fisk.png" /></div><p>Fisk och skaldjursgryta med aioli och krutonger</p></div></div><div class="menu-item"><div class="menu-item-container"><div class="image-wrapper"><img src="img/menu-icons/menu-soppa.png" /></div><p>Ärtsoppa med fläsk samt pannkakor</p></div></div><div class="menu-item"><div class="menu-item-container"><div class="image-wrapper"><img src="img/menu-icons/menu-vilt.png" /></div><p>Viltskav med potatispuré och svartvinbärsgelé</p></div></div>')
+	$('#todays-menu').append('<div class="menu-item"><div class="menu-item-container"><div class="image-wrapper"><img src="img/menu-icons/menu-fisk.png" /></div><p>Fisk och skaldjursgryta med aioli och krutonger</p></div></div><div class="menu-item"><div class="menu-item-container"><div class="image-wrapper"><img src="img/menu-icons/menu-soppa.png" /></div><p>Ärtsoppa med fläsk samt pannkakor</p></div></div><div class="menu-item"><div class="menu-item-container"><div class="image-wrapper"><img src="img/menu-icons/menu-vilt.png" /></div><p>Viltskav med potatispuré och svartvinbärsgelé</p></div></div>');
+	$('#todays-menu').slick({
+		arrows: false,
+		dots: true
+  	});
 }
