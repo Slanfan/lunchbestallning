@@ -339,7 +339,7 @@ video::-webkit-media-controls {
     padding: 10px;
     border-bottom-left-radius: 2.5vw;
     left: 15vw;
-    top: 95.05vw;
+    top: 95.2vw;
     width: 30vw;
     text-align: center;
     font-family: sans-serif;
@@ -354,8 +354,8 @@ video::-webkit-media-controls {
     padding: 10px;
     border-bottom-right-radius: 2.5vw;
     right: 15vw;
-    top: 95.05vw;
-    width: 30.1vw;
+    top: 95.2vw;
+    width: 29.2vw;
     text-align: center;
     text-transform: uppercase;
     font-family: sans-serif;
