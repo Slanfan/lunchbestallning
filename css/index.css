@@ -311,6 +311,10 @@ video::-webkit-media-controls {
     font-size: 3vw;
     text-align: justify;
 }
+.order-message p span {
+    font-weight: bold;
+    color: black;
+}
 .order-message input {
     width: 34vw;
     height: 10vw;

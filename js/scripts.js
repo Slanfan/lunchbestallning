@@ -24,10 +24,10 @@ function load_menu() {
 function confirm_order(course_id, course_description) {
 	// set course in form
 	$('#order-course').val(course_id);
-	$('#order-request').val();
+	$('#order-request').val('');
 
 	// load confirm message text
-	$('.order-message p').empty('');
+	$('.order-message p').empty();
 	$('.order-message p').append('Vänligen bekräfta beställning av <span>' + course_description + '</span>');
 
 	// show confirm message
@@ -43,12 +43,12 @@ function place_order() {
 	alert('Courseid: ' + course_id + ' - Request: ' + course_request);
 
 	$('.order-overlay').fadeOut(250);
-	$('#order-request').val();
-	$('#order-course').val();
+	$('#order-request').val('');
+	$('#order-course').val('');
 }
 
 function hide_message() {
 	$('.order-overlay').fadeOut(250);
-	$('#order-request').val();
-	$('#order-course').val();
+	$('#order-request').val('');
+	$('#order-course').val('');
 }
