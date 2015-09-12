@@ -226,14 +226,14 @@ video::-webkit-media-controls {
 .main-logo-lunch {
     z-index: 10;
     position: relative;
-    margin-top: 16vw;
-    width: 75vw;
+    margin-top: 6vw;
+    width: 32vw;
 }
 .main-menu-bars {
     position: absolute;
     top: 0;
     left: 0;
-    height: 8vw;
+    height: 12vw;
     margin-top: 6vw;
     margin-left: 6vw;
 }
@@ -247,7 +247,7 @@ video::-webkit-media-controls {
 }
 .menu-slider {
     height: 60vw;
-    margin-top: 20vw;
+    margin-top: 70vw;
     color: white;
     text-transform: none;
 }
@@ -256,21 +256,21 @@ video::-webkit-media-controls {
     width: 100vw;
 }
 .image-wrapper {
-    background-color: rgba(217,255,0,0.5);
-    width: 40vw;
-    left: 30vw;
+    background-color: rgba(217,255,0,0.7);
+    width: 30vw;
+    height: 30vw;
+    left: 35vw;
     position: relative;
-    height: 40vw;
     border-radius: 40vw;
 }
 .menu-item-container .image-wrapper img {
     position: absolute;
     margin: 5vw;
-    width: 30vw;
+    width: 20vw;
 }
 .menu-item-container p {
-    font-size: 5vw;
+    font-size: 4vw;
     padding-left: 10vw;
     padding-right: 10vw;
-    margin-top: 0vw;
+    margin-top: 2vw;
 }
