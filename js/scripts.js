@@ -28,7 +28,7 @@ function confirm_order(course_id, course_description) {
 
 	// load confirm message text
 	$('.order-message p').empty('');
-	$('.order-message p').append('Vänligen bekräfta beställning av <b>' + course_description + '<b>');
+	$('.order-message p').append('Vänligen bekräfta beställning av <span>' + course_description + '</span>');
 
 	// show confirm message
 	$('.order-overlay').fadeIn(250);
@@ -49,4 +49,6 @@ function place_order() {
 
 function hide_message() {
 	$('.order-overlay').fadeOut(250);
+	$('#order-request').val();
+	$('#order-course').val();
 }
