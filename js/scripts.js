@@ -59,7 +59,17 @@ function place_order() {
 			console.log(data);
 
 			// check response
-
+			if ( data.status >= 200 && data.status < 300 || data.status === 304 ) {
+				// show success message
+				$('.success-message p').empty();
+				$('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
+				$('.success-message').show('slide', { direction: "left" }, 500);
+			} else {
+				// show error message
+				$('.error-message p').empty();
+				$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
+				$('.error-message').show('slide', { direction: "left" }, 500);
+			}
 		}
 	});
 }
@@ -69,3 +79,12 @@ function hide_message() {
 	$('#order-request').val('');
 	$('#order-course').val('');
 }
+
+$('.error-message').click(function() {
+	// hide message
+	$(this).hide('drop');
+});
+$('.success-message').click(function() {
+	// hide message
+	$(this).hide('drop');
+});
