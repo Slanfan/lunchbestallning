@@ -56,11 +56,11 @@ function login() {
 			    PushbotsPlugin.setAlias(username);
 			    // PushbotsPlugin.resetBadge();
 			    //Get device token
-				/*
+				
 				PushbotsPlugin.getToken(function(token){
 			    	console.log(token);
 				});
-				*/
+				
 
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
