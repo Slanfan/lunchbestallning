@@ -68,7 +68,7 @@ function place_order() {
 				// show error message
 				$('.error-message p').empty();
 				$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
-				$('.error-message').show('slide', { direction: "left" }, 500);
+				$('.error-message').show('slide', { direction: "right" }, 500);
 			}
 		}
 	});

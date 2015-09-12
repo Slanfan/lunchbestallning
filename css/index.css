@@ -385,7 +385,7 @@ video::-webkit-media-controls {
 .error-message p {
     padding: 2.5vw;
     text-align: center;
-    font-size: 5vw;
+    font-size: 4vw;
     color: #844242;
     font-weight: 600;
     text-transform: none;
@@ -405,7 +405,7 @@ video::-webkit-media-controls {
 .success-message p {
     padding: 2.5vw;
     text-align: center;
-    font-size: 5vw;
+    font-size: 4vw;
     color: #428459;
     font-weight: 600;
     text-transform: none;
