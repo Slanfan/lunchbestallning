@@ -29,8 +29,12 @@
 
         <!-- Jquery -->
         <script src="js/jquery-1.11.1.js"></script>
-        <!--<script src="js/jquery.mobile-1.4.5.js"></script>-->
         <script src="js/jquery-ui-1.11.4.js"></script>
+
+        <!-- slick slider -->
+        <script src="js/slick.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+        <link rel="stylesheet" type="text/css" href="css/slick.css" />
 
     </head>
     <body>
@@ -69,7 +73,12 @@
             </div>
 
             <div class="app" id="main">
-                <h1>välkommen</h1>
+                <img class="main-menu-bars" src="img/menu-ellipsis.png" />
+                <img class="main-logo-lunch" src="img/logo-lunch.png" />
+                <img class="main-menu-icon" src="img/menu-icon-1.png" />
+                <div class="menu-slider">
+                    <!-- AJAX INSERT MENU -->
+                </div>
                 <button type="button" onclick="logout()">logga ut</button>
             </div>
         </div>
@@ -77,5 +86,6 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
     </body>
 </html>

@@ -4,12 +4,38 @@ $(document).ready(function() {
 	//PushbotsPlugin.resetBadge();
 
 	if(localStorage.getItem("username") != null) {
+		load_menu();
 		$('#main').show();
 	} else {
 		$('#start').show();
 	}
 });
 
+/* ----> web testing
+function login() {
+	// store user information locally
+	localStorage.setItem("username", username);
+	localStorage.setItem("company", "Elgiganten Backoffice");
+	localStorage.setItem("employee_number", "23441116");
+
+	// update textinfo and fade out box
+	$('#info-text').text('inloggning lyckades');
+	setTimeout(function() {
+		$('.info-box').fadeOut(500);
+	}, 1000);
+	setTimeout(function() {
+		// show main and hide login
+	    $('#main').fadeIn(900);
+	}, 2000);
+	setTimeout(function() {
+		// empty inputs and hide login
+		$('#username').val('');
+		$('#password').val('');
+		$('#login').hide();
+	}, 3500);
+}
+*/
+// ----> release version
 function login() {
 
 	// uppdatera textinfo och visa loader
@@ -50,7 +76,10 @@ function login() {
 			    localStorage.setItem("company", data.responseJSON.company);
 			    localStorage.setItem("employee_number", data.responseJSON.number);
 			    PushbotsPlugin.setAlias(username);
-			    
+
+			    // load menu in main window
+			    load_menu();
+
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			setTimeout(function() {

@@ -188,6 +188,8 @@ video::-webkit-media-controls {
     z-index: 100;
 }
 #main {
+    background-image: url('../img/main-background.jpg');
+    background-size: cover;
     z-index: 200;
 }
 .app-container {
@@ -220,4 +222,55 @@ video::-webkit-media-controls {
 .info-box p {
     margin: 0;
     padding: 0;
+}
+.main-logo-lunch {
+    z-index: 10;
+    position: relative;
+    margin-top: 16vw;
+    width: 75vw;
+}
+.main-menu-bars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8vw;
+    margin-top: 6vw;
+    margin-left: 6vw;
+}
+.main-menu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 12vw;
+    margin-top: 6vw;
+    margin-right: 6vw;
+}
+.menu-slider {
+    height: 60vw;
+    margin-top: 20vw;
+    color: white;
+    text-transform: none;
+}
+.menu-item-container {
+    height: 67vw;
+    width: 100vw;
+}
+.image-wrapper {
+    background-color: rgba(217,255,0,0.5);
+    width: 40vw;
+    left: 30vw;
+    position: relative;
+    height: 40vw;
+    border-radius: 40vw;
+}
+.menu-item-container .image-wrapper img {
+    position: absolute;
+    margin: 5vw;
+    width: 30vw;
+}
+.menu-item-container p {
+    font-size: 6vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 0vw;
 }
