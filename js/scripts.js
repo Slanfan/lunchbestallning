@@ -60,14 +60,22 @@ function place_order() {
 
 			// check response
 			if ( data.status >= 200 && data.status < 300 || data.status === 304 ) {
-				// show success message
-				$('.success-message p').empty();
-				$('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
-				$('.success-message').show('slide', { direction: "right" }, 500);
+				// check response
+				if(data.responseJSON.result == 'success') {
+					// show success message
+					$('.success-message p').empty();
+					$('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
+					$('.success-message').show('slide', { direction: "right" }, 500);
+				} else {
+					// show error message
+					$('.error-message p').empty();
+					$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
+					$('.error-message').show('slide', { direction: "right" }, 500);
+				}
 			} else {
 				// show error message
 				$('.error-message p').empty();
-				$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
+				$('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
 				$('.error-message').show('slide', { direction: "right" }, 500);
 			}
 		}
