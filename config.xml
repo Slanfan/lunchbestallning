@@ -137,6 +137,6 @@
 
     <content src="index.html" />
     <access origin="*" />
-	<access origin="*.pushbots.com" />
+	<!--<access origin="*.pushbots.com" />-->
 
 </widget>
