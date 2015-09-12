@@ -12,7 +12,7 @@ function load_menu() {
 
 	// load data from url and add slick slider to menu-slider
 	$('.menu-slider').load(url, function(){
-		$('.menu-slider').slick({
+		$('#todays-menu').slick({
 			arrows: false,
 			dots: true
 	  	});
