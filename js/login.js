@@ -41,27 +41,16 @@ function login() {
 			}, 1000);
     	},
     	complete: function(data) {
-    		
-    		console.log(data);
     		console.log(data.responseJSON);
-
-    		console.log('Result: ' + data.responseJSON.result);
-    		console.log('Company: ' + data.responseJSON.company);
-    		console.log('Number: ' + data.responseJSON.number);
+    		
+    		// check returned data
     		if(data.responseJSON.result == 'success') {
     			// store user information locally
 			    localStorage.setItem("username", username);
 			    localStorage.setItem("company", data.responseJSON.company);
 			    localStorage.setItem("employee_number", data.responseJSON.number);
 			    PushbotsPlugin.setAlias(username);
-			    // PushbotsPlugin.resetBadge();
-			    //Get device token
-				
-				PushbotsPlugin.getToken(function(token){
-			    	console.log(token);
-				});
-				
-
+			    
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			setTimeout(function() {
@@ -90,8 +79,10 @@ function login() {
 
 function logout() {
 
-	// remove stores userinformation
+	// remove stored userinformation
 	localStorage.removeItem("username");
+	localStorage.removeItem("company");
+	localStorage.removeItem("employee_number");
 
 	// hide login and hide main app
 	$('#login').hide();
