@@ -188,7 +188,7 @@ video::-webkit-media-controls {
     z-index: 100;
 }
 #main {
-    background-image: url('../img/main-background.jpg');
+    background-image: url('../img/main-background-1.jpg');
     background-size: cover;
     z-index: 200;
 }
@@ -269,7 +269,7 @@ video::-webkit-media-controls {
     width: 30vw;
 }
 .menu-item-container p {
-    font-size: 6vw;
+    font-size: 5vw;
     padding-left: 10vw;
     padding-right: 10vw;
     margin-top: 0vw;
