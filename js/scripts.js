@@ -39,12 +39,28 @@ function place_order() {
 	// store variables
 	var course_id = $('#order-course').val();
 	var course_request = $('#order-request').val();
+	var url = 'http://www.lunchbestallning.se/app/place_order.php';
+	var data = { "course_id": course_id, "request": course_request, "username": localStorage.getItem("username"), "employee_number": localStorage.getItem("employee_number") };
 
-	alert('Courseid: ' + course_id + ' - Request: ' + course_request);
+	// send order
+	$.ajax({
+		url: url,
+		data: data,
+		dataType: "json",
+		type: "GET",
+		complete: function(data) {
+			// hide order overlay
+			$('.order-overlay').fadeOut(250);
+			$('#order-request').val('');
+			$('#order-course').val('');
 
-	$('.order-overlay').fadeOut(250);
-	$('#order-request').val('');
-	$('#order-course').val('');
+			// display server message
+			console.log(data);
+
+			// check response
+			
+		}
+	});
 }
 
 function hide_message() {

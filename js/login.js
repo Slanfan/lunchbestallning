@@ -45,7 +45,6 @@ function login() {
 	// get input information
 	var username = $('#username').val().toLowerCase();
     var password = $('#password').val();
-    var ajaxResponse;
     var data = {"username": username, "password": password};
 
     // connect to database to check login
