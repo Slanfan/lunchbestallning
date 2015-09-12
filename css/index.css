@@ -256,7 +256,7 @@ video::-webkit-media-controls {
     width: 100vw;
 }
 .image-wrapper {
-    background-color: rgba(217,255,0,0.7);
+    background-color: rgba(66, 156, 121, 0.8);
     width: 30vw;
     height: 30vw;
     left: 35vw;
@@ -267,9 +267,10 @@ video::-webkit-media-controls {
     position: absolute;
     margin: 5vw;
     width: 20vw;
+    -webkit-filter: invert(100%);
 }
 .menu-item-container p {
-    font-size: 4vw;
+    font-size: 4.4vw;
     padding-left: 10vw;
     padding-right: 10vw;
     margin-top: 2vw;
