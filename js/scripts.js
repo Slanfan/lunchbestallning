@@ -63,7 +63,7 @@ function place_order() {
 				// show success message
 				$('.success-message p').empty();
 				$('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
-				$('.success-message').show('slide', { direction: "left" }, 500);
+				$('.success-message').show('slide', { direction: "right" }, 500);
 			} else {
 				// show error message
 				$('.error-message p').empty();
