@@ -246,13 +246,13 @@ video::-webkit-media-controls {
     margin-right: 6vw;
 }
 .menu-slider {
-    height: 60vw;
+    height: 42vw;
     margin-top: 70vw;
     color: white;
     text-transform: none;
 }
 .menu-item-container {
-    height: 67vw;
+    height: 50vw;
     width: 100vw;
 }
 .image-wrapper {
