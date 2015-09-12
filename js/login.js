@@ -35,6 +35,10 @@ function login() {
     	error: function() {
     		// update textinfo
     		$('#info-text').text('anslutning misslyckades');
+    		// fade out info box
+    		setTimeout(function() {
+				$('.info-box').fadeOut(500);
+			}, 1000);
     	},
     	complete: function(data) {
     		
