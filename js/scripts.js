@@ -13,6 +13,7 @@ function load_menu() {
 	// load data from url and add slick slider to menu-slider
 	$.get(url, function(data){
 		console.log(data);
+		$('#todays-menu').empty();
 		$('#todays-menu').append(data);
 		$('#todays-menu').slick({
 			arrows: false,
@@ -58,7 +59,7 @@ function place_order() {
 			console.log(data);
 
 			// check response
-			
+
 		}
 	});
 }
