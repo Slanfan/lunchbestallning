@@ -21,8 +21,29 @@ function load_menu() {
 	});
 }
 
-function place_order(course_id) {
+function confirm_order(course_id, course_description) {
+	// set course in form
+	$('#order-course').val(course_id);
 
-	alert('place order on course: ' + course_id);
+	// load confirm message text
+	$('.order-message p').text('');
+	$('.order-message p').text('Vänligen bekräfta beställning av <b>' + course_description + '<b>');
 
+	// show confirm message
+	$('.order-overlay').fadeIn(250);
+
+}
+
+function place_order() {
+	// store variables
+	var course_id = $('#order-course').val();
+	var course_request = $('#order-request').val();
+
+	alert('Courseid: ' + course_id + ' - Request: ' + course_request);
+	
+	$('.order-overlay').fadeOut(250);
+}
+
+function hide_message() {
+	$('.order-overlay').fadeOut(250);
 }
