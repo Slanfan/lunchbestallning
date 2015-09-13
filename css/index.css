@@ -250,7 +250,7 @@ video::-webkit-media-controls {
     text-transform: none;
 }
 .menu-item-container {
-    height: 50vw;
+    height: 55vw;
     width: 100vw;
 }
 .image-wrapper {
@@ -471,12 +471,13 @@ video::-webkit-media-controls {
 }
 #loaded-menu {
     position: relative;
-    height: 66vw;
+    height: 80vw;
     margin-left: 6.5vw;
     margin-top: 14vw;
     width: 88vw;
     color: white;
     text-transform: none;
+    padding-top: 6vw
 }
 
 #main.left {
