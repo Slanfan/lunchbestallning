@@ -104,7 +104,7 @@ function login() {
     	}
     });
 }
-/*/
+//*/
 function logout() {
 
 	// remove stored userinformation
