@@ -102,10 +102,10 @@ function show_settings() {
 		$('#main').addClass('transition');
 		$('#main').addClass('center');
 		setTimeout(function() {
-	 		$('#main .settings').toggle();
+	 		$('#settings').toggle();
 	 	}, 275);
 	} else {
-		$('#main .settings').toggle();
+		$('#settings').toggle();
 		$('#main').removeClass('transition');
 		$('#main').removeClass('center');
 		$('#main').addClass('transition');
@@ -120,10 +120,10 @@ function show_menu() {
 		$('#main').addClass('transition');
 		$('#main').addClass('center');
 		setTimeout(function() {
-	 		$('#main .menu').toggle();
+	 		$('#menu').toggle();
 	 	}, 275);
 	} else {
-		$('#main .menu').toggle();
+		$('#menu').toggle();
 		$('#main').removeClass('transition');
 		$('#main').removeClass('center');
 		$('#main').addClass('transition');
