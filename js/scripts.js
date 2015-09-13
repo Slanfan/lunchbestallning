@@ -6,6 +6,13 @@ $(document).ready(function() {
 	}
 });
 
+$(function () {
+	$('.calendar').pickmeup({
+		flat: true,
+	    format  : 'Y-m-d'
+	});
+});
+
 function load_menu() {
 	// store menu-url to load in variable
 	var url = 'http://www.lunchbestallning.se/app/todays-menu.php?company=' + localStorage.getItem("company");
@@ -88,6 +95,42 @@ function hide_message() {
 	$('#order-course').val('');
 }
 
+function show_settings() {
+	if($('#main .start').hasClass('slidedRight')) {
+		$('#main .start').animate({
+			left: 0 + 'vw'
+		}, 200);
+		$('#main .start').removeClass('slidedRight');
+		setTimeout(function() {
+	 		$('#main .settings').toggle();
+	 	}, 210);
+	} else {
+		$('#main .settings').toggle();
+		$('#main .start').animate({
+			left: 86 + 'vw'
+		}, 200);
+		$('#main .start').addClass('slidedRight');
+	}
+}
+
+function show_menu() {
+	if($('#main .start').hasClass('slidedLeft')) {
+		$('#main .start').animate({
+			left: 0 + 'vw'
+		}, 200);
+		$('#main .start').removeClass('slidedLeft');
+	 	setTimeout(function() {
+	 		$('#main .menu').toggle();
+	 	}, 210);
+	} else {
+		$('#main .menu').toggle();
+		$('#main .start').animate({
+			left: -86 + 'vw'
+		}, 200);
+		$('#main .start').addClass('slidedLeft');
+	}
+}
+
 $('.error-message').click(function() {
 	// hide message
 	$(this).hide('drop', { direction: "left" }, 500);
@@ -95,4 +138,21 @@ $('.error-message').click(function() {
 $('.success-message').click(function() {
 	// hide message
 	$(this).hide('drop', { direction: "left" }, 500);
+});
+$('.menu-loader').click(function() {
+	// store selected date
+	var picked_date = $('.calendar').pickmeup('get_date', true);
+	// store menu-url to load in variable
+	var url = 'http://www.lunchbestallning.se/app/load-menu.php?company=' + localStorage.getItem("company") + '&date=' + picked_date;
+	// load data from url and add slick slider to menu-slider
+	$.get(url, function(data){
+		console.log(data);
+		$("#loaded-menu").removeClass();
+		$('#loaded-menu').empty();
+		$('#loaded-menu').append(data);
+		$('#loaded-menu').slick({
+			arrows: false,
+			dots: true
+	  	});
+	});
 });

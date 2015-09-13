@@ -52,7 +52,7 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 101vw;
+    width: 100vw;
     text-align: center;
     display: none;
 }
@@ -188,8 +188,6 @@ video::-webkit-media-controls {
     z-index: 100;
 }
 #main {
-    background-image: url('../img/main-background-3.jpg');
-    background-size: cover;
     z-index: 200;
 }
 .app-container {
@@ -235,7 +233,7 @@ video::-webkit-media-controls {
     left: 0;
     height: 12vw;
     margin-top: 6vw;
-    margin-left: 6vw;
+    margin-left: 4vw;
 }
 .main-menu-icon {
     position: absolute;
@@ -243,7 +241,7 @@ video::-webkit-media-controls {
     right: 0;
     height: 12vw;
     margin-top: 6vw;
-    margin-right: 6vw;
+    margin-right: 4vw;
 }
 .menu-slider {
     height: 42vw;
@@ -408,5 +406,75 @@ video::-webkit-media-controls {
     font-size: 4vw;
     color: #428459;
     font-weight: 600;
+    text-transform: none;
+}
+#main .start {
+    background-image: url('../img/main-background-3.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+#main .settings {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #424242;
+    z-index: -1;
+    display: none;
+}
+#main .menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: black;
+    z-index: -1;
+    display: none;
+}
+.menu-header {
+    text-align: center;
+    padding-left: 17vw;
+    padding-top: 4vw;
+    padding-bottom: 2vw;
+    padding-right: 2vw;
+    height: 10vw;
+    border-bottom: 1px solid #677323;
+    font-size: x-large;
+    font-weight: 800;
+    color: white;
+    background-color: #8C9C2E;
+}
+.calendar {
+    margin-left: 13vw;
+    width: 88vw;
+    height: 80vw;
+    font-size: 5.8vw;
+}
+.menu-loader {
+    margin-left: 13vw;
+    width: 88vw;
+    height: 12vw;
+    background-color: #8C9C2E;
+    color: white;
+    font-size: 5vw;
+    padding: 2vw;
+}
+.menu-laoder:hover {
+    background-color: red;   
+}
+#loaded-menu {
+    position: relative;
+    height: 66vw;
+    margin-left: 6.5vw;
+    margin-top: 14vw;
+    width: 88vw;
+    color: white;
     text-transform: none;
 }

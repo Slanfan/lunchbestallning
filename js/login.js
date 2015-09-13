@@ -1,17 +1,17 @@
 
 $(document).ready(function() {
 
-	//PushbotsPlugin.resetBadge();
+	PushbotsPlugin.resetBadge(); /* uncomment before release */
 
 	if(localStorage.getItem("username") != null) {
-		load_menu();
+		load_menu(); /* uncomment before release */
 		$('#main').show();
 	} else {
 		$('#start').show();
 	}
 });
 
-/* ----> web testing
+/* ----> web testing (comment before release)
 function login() {
 	// store user information locally
 	localStorage.setItem("username", username);
@@ -35,7 +35,7 @@ function login() {
 	}, 3500);
 }
 */
-// ----> release version
+// ----> release version (uncomment before release)
 function login() {
 
 	// uppdatera textinfo och visa loader
@@ -104,7 +104,7 @@ function login() {
     	}
     });
 }
-
+//*/
 function logout() {
 
 	// remove stored userinformation

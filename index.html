@@ -38,6 +38,10 @@
         <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
         <link rel="stylesheet" type="text/css" href="css/slick.css" />
 
+        <!-- pickmeup calendar -->
+        <script src="js/jquery.pickmeup.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/pickmeup.min.css" />
+
     </head>
     <body>
         <div class="app-container">
@@ -75,11 +79,27 @@
             </div>
 
             <div class="app" id="main">
-                <img class="main-menu-bars" src="img/menu-ellipsis.png" />
-                <img class="main-logo-lunch" src="img/logo-lunch.png" />
-                <img class="main-menu-icon" src="img/menu-icon-1.png" />
-                <div class="menu-slider" id="todays-menu">
-                    <img src="img/loader.gif">
+                <div class="start">
+                    <img class="main-menu-bars" src="img/menu-ellipsis.png" onclick="show_settings()" />
+                    <img class="main-logo-lunch" src="img/logo-lunch.png" />
+                    <img class="main-menu-icon" src="img/menu-icon-1.png" onclick="show_menu()" />
+                    <div class="menu-slider" id="todays-menu">
+                        <img src="img/loader.gif">
+                    </div>
+                </div>
+                <div class="settings">
+
+                </div>
+                <div class="menu">
+                    <div class="menu-header">
+                        veckomeny
+                    </div>
+                    <div class="calendar">
+                    </div>
+                    <button class="menu-loader">ladda meny</button>
+                    <div id="loaded-menu">
+                    </div>
+
                 </div>
                 <!--<button type="button" onclick="logout()">logga ut</button>-->
             </div>
