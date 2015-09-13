@@ -96,6 +96,35 @@ function hide_message() {
 }
 
 function show_settings() {
+	if($('#main').hasClass('right')) {
+		$('#main').removeClass('transition');
+		$('#main').removeClass('right');
+		$('#main').addClass('transition');
+		$('#main').addClass('center');
+	} else {
+		$('#main').removeClass('transition');
+		$('#main').removeClass('center');
+		$('#main').addClass('transition');
+		$('#main').addClass('right');
+	}
+}
+
+function show_menu() {
+	if($('#main').hasClass('left')) {
+		$('#main').removeClass('transition');
+		$('#main').removeClass('left');
+		$('#main').addClass('transition');
+		$('#main').addClass('center');
+	} else {
+		$('#main').removeClass('transition');
+		$('#main').removeClass('center');
+		$('#main').addClass('transition');
+		$('#main').addClass('left');
+	}
+}
+
+/*
+function show_settings() {
 	if($('#main .start').hasClass('slidedRight')) {
 		$('#main .start').animate({
 			left: 0 + 'vw'
@@ -130,7 +159,7 @@ function show_menu() {
 		$('#main .start').addClass('slidedLeft');
 	}
 }
-
+*/
 $('.error-message').click(function() {
 	// hide message
 	$(this).hide('drop', { direction: "left" }, 500);
