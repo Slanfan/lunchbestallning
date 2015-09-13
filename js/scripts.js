@@ -101,7 +101,11 @@ function show_settings() {
 		$('#main').removeClass('right');
 		$('#main').addClass('transition');
 		$('#main').addClass('center');
+		setTimeout(function() {
+	 		$('#main .settings').toggle();
+	 	}, 275);
 	} else {
+		$('#main .settings').toggle();
 		$('#main').removeClass('transition');
 		$('#main').removeClass('center');
 		$('#main').addClass('transition');
@@ -115,7 +119,11 @@ function show_menu() {
 		$('#main').removeClass('left');
 		$('#main').addClass('transition');
 		$('#main').addClass('center');
+		setTimeout(function() {
+	 		$('#main .menu').toggle();
+	 	}, 275);
 	} else {
+		$('#main .menu').toggle();
 		$('#main').removeClass('transition');
 		$('#main').removeClass('center');
 		$('#main').addClass('transition');
