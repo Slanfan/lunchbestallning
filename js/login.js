@@ -11,7 +11,7 @@ $(document).ready(function() {
 	}
 });
 
-//* ----> web testing (comment before release)
+/* ----> web testing (comment before release)
 function login() {
 	// store user information locally
 	localStorage.setItem("username", username);
@@ -104,7 +104,7 @@ function login() {
     	}
     });
 }
-//*/
+/*/
 function logout() {
 
 	// remove stored userinformation
