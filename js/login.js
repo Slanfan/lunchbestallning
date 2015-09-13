@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-	PushbotsPlugin.resetBadge(); /* uncomment before release */
+	//PushbotsPlugin.resetBadge(); /* uncomment before release */
 
 	if(localStorage.getItem("username") != null) {
 		load_menu(); /* uncomment before release */
