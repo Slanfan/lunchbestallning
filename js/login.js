@@ -8,6 +8,7 @@ $(document).ready(function() {
 		$('#main').show();
 	} else {
 		$('#start').show();
+		$('#login').show();
 	}
 });
 
@@ -113,7 +114,7 @@ function logout() {
 	localStorage.removeItem("employee_number");
 
 	// hide login and hide main app
-	$('#login').hide();
+	$('#login').show();
 	$('#start').show();
 	$('#main').toggleClass('fadedOut');
 }
