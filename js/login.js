@@ -122,7 +122,21 @@ function logout() {
 	$('#main').toggleClass('fadedOut');
 	$('#main').toggleClass('fading');
 	setTimeout(function() {
-		toggle_settings();
+		if($('#main').hasClass('right')) {
+			$('#main').removeClass('transition');
+			$('#main').removeClass('right');
+			$('#main').addClass('transition');
+			$('#main').addClass('center');
+			setTimeout(function() {
+		 		$('#settings').toggle();
+		 	}, 351);
+		} else {
+			$('#settings').toggle();
+			$('#main').removeClass('transition');
+			$('#main').removeClass('center');
+			$('#main').addClass('transition');
+			$('#main').addClass('right');
+		}
 	},2001)
 }
 
