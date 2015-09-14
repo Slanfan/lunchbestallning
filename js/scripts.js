@@ -102,7 +102,7 @@ function toggle_settings() {
 		$('#main').addClass('center');
 		setTimeout(function() {
 	 		$('#settings').toggle();
-	 	}, 251);
+	 	}, 351);
 	} else {
 		$('#settings').toggle();
 		$('#main').removeClass('transition');
@@ -120,7 +120,7 @@ function toggle_menu() {
 		$('#main').addClass('center');
 		setTimeout(function() {
 	 		$('#menu').toggle();
-	 	}, 251);
+	 	}, 351);
 	} else {
 		$('#menu').toggle();
 		$('#main').removeClass('transition');

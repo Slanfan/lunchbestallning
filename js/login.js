@@ -118,6 +118,10 @@ function logout() {
 	$('#login').show();
 	$('#start').show();
 	$('#main').toggleClass('fadedOut');
+	$('#main').toggleClass('fading');
+	setTimeout(function() {
+		toggle_settings();
+	},2001)
 }
 
 function toogle_login() {
