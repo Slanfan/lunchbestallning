@@ -85,6 +85,7 @@ function login() {
     			$('#info-text').text('inloggning lyckades');
     			
     			// fade in main
+    			$('#main').addClass('fading');
     			$('#main').removeClass('fadedOut');
     			$('#main').show();
     			
@@ -95,6 +96,7 @@ function login() {
 					$('#login').hide();
 					$('#start').hide();
 					$('.info-box').hide();
+					$('#main').removeClass('fading');
     			}, 2001)
     		} else {
     			// update textinfo and fade out box
