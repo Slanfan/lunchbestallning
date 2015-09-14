@@ -186,6 +186,7 @@ video::-webkit-media-controls {
 }
 #login {
     z-index: 100;
+    right: 100;
 }
 #main {
     z-index: 200;
