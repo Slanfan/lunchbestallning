@@ -83,18 +83,18 @@ function login() {
 
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
+    			
+    			// fade in main
+    			$('#main').removeClass('fadedOut');
+    			$('#main').show();
+    			
+    			// empty inputs and hide login and info
     			setTimeout(function() {
-    				$('.info-box').fadeOut(500);
-    			}, 1000);
-    			setTimeout(function() {
-    				// show main and hide login
-				    $('#main').fadeIn(900);
-    			}, 2000);
-    			setTimeout(function() {
-    				// empty inputs and hide login
     				$('#username').val('');
 					$('#password').val('');
-    			}, 3500)
+					$('#login').hide();
+					$('.info-box').hide();
+    			}, 2001)
     		} else {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning misslyckades, försök igen');
