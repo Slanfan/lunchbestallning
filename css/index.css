@@ -95,7 +95,6 @@ button:active {
 }
 input {
     display: inline-block;
-    float: right;
     width: 100vw;
     height: 13vw;
     font-size: 6vw;
@@ -107,7 +106,6 @@ input {
     background-size: 6vw;
     text-indent: 11vw;
     padding: 1vw;
-    
 }
 .username {
     background-image: url("../img/user.png");
@@ -497,8 +495,8 @@ transform: translate3d(0, 0, 0);
 transform: translate3d(86%, 0, 0);
 }
 #main.transition {
-    -webkit-transition-duration: .25s;
-    transition-duration: .25s;
+-webkit-transition-duration: .25s;
+transition-duration: .25s;
 }
 #login.right {
 -webkit-transform: translate3d(100%, 0, 0);
@@ -509,6 +507,6 @@ transform: translate3d(100%, 0, 0);
 transform: translate3d(0, 0, 0);
 }
 #login.transition {
-    -webkit-transition-duration: .25s;
-    transition-duration: .25s;
+-webkit-transition-duration: .25s;
+transition-duration: .25s;
 }

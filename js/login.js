@@ -7,8 +7,9 @@ $(document).ready(function() {
 		load_menu(); /* uncomment before release */
 		$('#main').show();
 	} else {
+		$('#login').addClass('right');
+		$('#login').show();
 		$('#start').show();
-		$('#login').hide();
 	}
 });
 
@@ -93,7 +94,6 @@ function login() {
     				// empty inputs and hide login
     				$('#username').val('');
 					$('#password').val('');
-					$('#login').hide();
     			}, 3500)
     		} else {
     			// update textinfo and fade out box
@@ -125,14 +125,10 @@ function toogle_login() {
 		$('#login').removeClass('right');
 		$('#login').addClass('transition');
 		$('#login').addClass('center');
-		$('#login').show();
 	} else {
 		$('#login').removeClass('transition');
 		$('#login').removeClass('center');
 		$('#login').addClass('transition');
 		$('#login').addClass('right');
-		setTimeout(function() {
-			$('#login').hide();
-		}, 251);
 	}
 }
