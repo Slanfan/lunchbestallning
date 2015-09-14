@@ -8,7 +8,7 @@ $(document).ready(function() {
 		$('#main').show();
 	} else {
 		$('#start').show();
-		$('#login').show();
+		$('#login').hide();
 	}
 });
 
@@ -125,10 +125,14 @@ function toogle_login() {
 		$('#login').removeClass('right');
 		$('#login').addClass('transition');
 		$('#login').addClass('center');
+		setTimeout(function() {
+			$('#login').hide();
+		}, 251);
 	} else {
 		$('#login').removeClass('transition');
 		$('#login').removeClass('center');
 		$('#login').addClass('transition');
 		$('#login').addClass('right');
+		$('#login').show();
 	}
 }

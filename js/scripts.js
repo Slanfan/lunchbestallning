@@ -120,7 +120,7 @@ function toggle_menu() {
 		$('#main').addClass('center');
 		setTimeout(function() {
 	 		$('#menu').toggle();
-	 	}, 275);
+	 	}, 251);
 	} else {
 		$('#menu').toggle();
 		$('#main').removeClass('transition');
