@@ -125,14 +125,14 @@ function toogle_login() {
 		$('#login').removeClass('right');
 		$('#login').addClass('transition');
 		$('#login').addClass('center');
-		setTimeout(function() {
-			$('#login').hide();
-		}, 251);
+		$('#login').show();
 	} else {
 		$('#login').removeClass('transition');
 		$('#login').removeClass('center');
 		$('#login').addClass('transition');
 		$('#login').addClass('right');
-		$('#login').show();
+		setTimeout(function() {
+			$('#login').hide();
+		}, 251);
 	}
 }
