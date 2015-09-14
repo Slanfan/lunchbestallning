@@ -93,6 +93,7 @@ function login() {
     				$('#username').val('');
 					$('#password').val('');
 					$('#login').hide();
+					$('#start').hide();
 					$('.info-box').hide();
     			}, 2001)
     		} else {
