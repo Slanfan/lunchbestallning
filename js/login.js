@@ -115,18 +115,23 @@ function logout() {
 	// hide login and hide main app
 	$('#login').hide();
 	$('#start').show();
-	setTimeout(function() {
-		// fade out main app
-		$('#main').fadeOut(900);
-	}, 1500);
+	$('#main').toggleClass('fadedOut');
 }
 
-function show_login() {
-	// show login screen
-	$('#login').show("slide", { direction: "right" }, 500);
-}
-
-function hide_login() {
-	// hide login screen
-	$('#login').hide("slide", { direction: "right" }, 500);
+function toogle_login() {
+	if($('#login').hasClass('left')) {
+		$('#login').removeClass('transition');
+		$('#login').removeClass('left');
+		$('#login').addClass('transition');
+		$('#login').addClass('center');
+		setTimeout(function() {
+	 		$('#menu').toggle();
+	 	}, 275);
+	} else {
+		$('#login').toggle();
+		$('#login').removeClass('transition');
+		$('#login').removeClass('center');
+		$('#login').addClass('transition');
+		$('#login').addClass('left');
+	}
 }

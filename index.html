@@ -51,7 +51,7 @@
                     <source src="vid/start.mp4" type="video/mp4" />
                 </video>
                 <div class="start-footer">
-                    <button class="start-login" onclick="show_login()">
+                    <button class="start-login" onclick="toogle_login()">
                         logga in
                     </button>
                     <button class="start-help" onclick="show_help()">
@@ -63,7 +63,7 @@
             <div class="app" id="login">
                 <h1>logga in</h1>
                 <div>
-                    <div class="back-button" onclick="hide_login()">
+                    <div class="back-button" onclick="toogle_login()">
                         <img src="img/left-arrow.png">
                     </div> 
                     <input type="text" class="username" placeholder="Användarnamn" id="username">
@@ -80,14 +80,13 @@
 
             <div class="app" id="main">
                 <div class="start">
-                    <img class="main-menu-bars" src="img/menu-ellipsis.png" onclick="show_settings()" />
+                    <img class="main-menu-bars" src="img/menu-ellipsis.png" onclick="toggle_settings()" />
                     <img class="main-logo-lunch" src="img/logo-lunch.png" />
-                    <img class="main-menu-icon" src="img/menu-icon-1.png" onclick="show_menu()" />
+                    <img class="main-menu-icon" src="img/menu-icon-1.png" onclick="toggle_menu()" />
                     <div class="menu-slider" id="todays-menu">
                         <img src="img/loader.gif">
                     </div>
                 </div>
-                <!--<button type="button" onclick="logout()">logga ut</button>-->
             </div>
 
             <div id="menu">
@@ -102,6 +101,7 @@
             </div>
 
             <div id="settings">
+                <button type="button" onclick="logout()">logga ut</button>
             </div>
 
         </div>

@@ -189,6 +189,10 @@ video::-webkit-media-controls {
 }
 #main {
     z-index: 200;
+    -webkit-transition: opacity 0.7s linear;
+}
+#main.fadedOut {
+    opacity: 0;
 }
 .app-container {
     position: fixed;
@@ -484,19 +488,27 @@ video::-webkit-media-controls {
 -webkit-transform: translate3d(-86%, 0, 0);
 transform: translate3d(-86%, 0, 0);
 }
-
 #main.center {
 -webkit-transform: translate3d(0, 0, 0);
 transform: translate3d(0, 0, 0);
 }
-
 #main.right {
 -webkit-transform: translate3d(86%, 0, 0);
 transform: translate3d(86%, 0, 0);
 }
-
 #main.transition {
     -webkit-transition-duration: .25s;
     transition-duration: .25s;
 }
-
+#login.left {
+-webkit-transform: translate3d(-100%, 0, 0);
+transform: translate3d(-100%, 0, 0);
+}
+#login.center {
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+#login.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+}

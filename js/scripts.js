@@ -40,7 +40,6 @@ function confirm_order(course_id, course_description) {
 
 	// show confirm message
 	$('.order-overlay').fadeIn(250);
-
 }
 
 function place_order() {
@@ -95,7 +94,7 @@ function hide_message() {
 	$('#order-course').val('');
 }
 
-function show_settings() {
+function toggle_settings() {
 	if($('#main').hasClass('right')) {
 		$('#main').removeClass('transition');
 		$('#main').removeClass('right');
@@ -113,7 +112,7 @@ function show_settings() {
 	}
 }
 
-function show_menu() {
+function toggle_menu() {
 	if($('#main').hasClass('left')) {
 		$('#main').removeClass('transition');
 		$('#main').removeClass('left');
@@ -131,51 +130,16 @@ function show_menu() {
 	}
 }
 
-/*
-function show_settings() {
-	if($('#main .start').hasClass('slidedRight')) {
-		$('#main .start').animate({
-			left: 0 + 'vw'
-		}, 200);
-		$('#main .start').removeClass('slidedRight');
-		setTimeout(function() {
-	 		$('#main .settings').toggle();
-	 	}, 210);
-	} else {
-		$('#main .settings').toggle();
-		$('#main .start').animate({
-			left: 86 + 'vw'
-		}, 200);
-		$('#main .start').addClass('slidedRight');
-	}
-}
-
-function show_menu() {
-	if($('#main .start').hasClass('slidedLeft')) {
-		$('#main .start').animate({
-			left: 0 + 'vw'
-		}, 200);
-		$('#main .start').removeClass('slidedLeft');
-	 	setTimeout(function() {
-	 		$('#main .menu').toggle();
-	 	}, 210);
-	} else {
-		$('#main .menu').toggle();
-		$('#main .start').animate({
-			left: -86 + 'vw'
-		}, 200);
-		$('#main .start').addClass('slidedLeft');
-	}
-}
-*/
 $('.error-message').click(function() {
 	// hide message
 	$(this).hide('drop', { direction: "left" }, 500);
 });
+
 $('.success-message').click(function() {
 	// hide message
 	$(this).hide('drop', { direction: "left" }, 500);
 });
+
 $('.menu-loader').click(function() {
 	// store selected date
 	var picked_date = $('.calendar').pickmeup('get_date', true);
