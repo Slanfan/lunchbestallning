@@ -119,19 +119,19 @@ function logout() {
 }
 
 function toogle_login() {
-	if($('#login').hasClass('left')) {
+	if($('#login').hasClass('right')) {
 		$('#login').removeClass('transition');
-		$('#login').removeClass('left');
+		$('#login').removeClass('right');
 		$('#login').addClass('transition');
 		$('#login').addClass('center');
 		setTimeout(function() {
-	 		$('#menu').toggle();
+	 		$('#login').toggle();
 	 	}, 275);
 	} else {
 		$('#login').toggle();
 		$('#login').removeClass('transition');
 		$('#login').removeClass('center');
 		$('#login').addClass('transition');
-		$('#login').addClass('left');
+		$('#login').addClass('right');
 	}
 }

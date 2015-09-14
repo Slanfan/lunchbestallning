@@ -189,7 +189,7 @@ video::-webkit-media-controls {
 }
 #main {
     z-index: 200;
-    -webkit-transition: opacity 0.7s linear;
+    -webkit-transition: opacity 2s linear;
 }
 #main.fadedOut {
     opacity: 0;
@@ -500,9 +500,9 @@ transform: translate3d(86%, 0, 0);
     -webkit-transition-duration: .25s;
     transition-duration: .25s;
 }
-#login.left {
--webkit-transform: translate3d(-100%, 0, 0);
-transform: translate3d(-100%, 0, 0);
+#login.right {
+-webkit-transform: translate3d(100%, 0, 0);
+transform: translate3d(100%, 0, 0);
 }
 #login.center {
 -webkit-transform: translate3d(0, 0, 0);
