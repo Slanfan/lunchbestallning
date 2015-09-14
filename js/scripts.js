@@ -102,7 +102,7 @@ function toggle_settings() {
 		$('#main').addClass('center');
 		setTimeout(function() {
 	 		$('#settings').toggle();
-	 	}, 275);
+	 	}, 251);
 	} else {
 		$('#settings').toggle();
 		$('#main').removeClass('transition');

@@ -484,29 +484,29 @@ video::-webkit-media-controls {
 
 #main.left {
 -webkit-transform: translate3d(-86%, 0, 0);
-transform: translate3d(-86%, 0, 0);
+/*transform: translate3d(-86%, 0, 0);*/
 }
 #main.center {
 -webkit-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
+/*transform: translate3d(0, 0, 0);*/
 }
 #main.right {
 -webkit-transform: translate3d(86%, 0, 0);
-transform: translate3d(86%, 0, 0);
+/*transform: translate3d(86%, 0, 0);*/
 }
 #main.transition {
 -webkit-transition-duration: .35s;
-transition-duration: .35s;
+/*transition-duration: .35s;*/
 }
 #login.right {
 -webkit-transform: translate3d(100%, 0, 0);
-transform: translate3d(100%, 0, 0);
+/*transform: translate3d(100%, 0, 0);*/
 }
 #login.center {
 -webkit-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
+/*transform: translate3d(0, 0, 0);*/
 }
 #login.transition {
 -webkit-transition-duration: .35s;
-transition-duration: .35s;
+/*transition-duration: .35s;*/
 }
