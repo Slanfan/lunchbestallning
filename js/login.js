@@ -120,7 +120,6 @@ function logout() {
 
 function toogle_login() {
 	if($('#login').hasClass('right')) {
-		$('#login').toggle();
 		$('#login').removeClass('transition');
 		$('#login').removeClass('right');
 		$('#login').addClass('transition');
@@ -130,8 +129,5 @@ function toogle_login() {
 		$('#login').removeClass('center');
 		$('#login').addClass('transition');
 		$('#login').addClass('right');
-		setTimeout(function() {
-	 		$('#login').toggle();
-	 	}, 275);
 	}
 }
