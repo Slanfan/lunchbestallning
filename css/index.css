@@ -476,11 +476,11 @@ input:focus {
     padding: 2vw;
     background-color: rgb(91, 100, 92);
 }
-.user-data p {
-    text-transform: none;
+.user-data.title {
+    text-transform: uppercase;
 }
-.user-data table {
-    padding: 0;
+.user-data.info {
+    text-transform: none;
 }
 
 #start.visible,
