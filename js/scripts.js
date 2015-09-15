@@ -30,7 +30,7 @@ function toggle_menu() {
 
 function toggle_settings() {
 	if($('#main').hasClass('left')) {
-		if($('#order-history').is(':empty')) {
+		if($('#order-history').html() == '') {
 			load_order_logg();
     	}
 		$('#main').removeClass('left');
