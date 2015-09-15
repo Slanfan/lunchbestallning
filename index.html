@@ -115,6 +115,23 @@
 
         </div>
 
+        <div class="order-overlay">
+            <div class="order-message">
+                <h3>lunchbeställning</h3>
+                <p></p>
+                <input type="text" id="order-request" placeholder="Eventuella önskemål" />
+                <input type="hidden" id="order-course" />
+            </div>
+            <div class="order-cancel" onclick="hide_message()">avbryt</div>
+            <div class="order-ok" onclick="place_order()">ok</div>
+        </div>
+        <div class="error-message">
+            <p>Här kommer det visas ett felmeddelande</p>
+        </div>
+        <div class="success-message">
+            <p>Här kommer det visas ett meddelande</p>
+        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
