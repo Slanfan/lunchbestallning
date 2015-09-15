@@ -113,6 +113,33 @@ body {
     color: white;
     background-color: #8C9C2E;
 }
+.calendar {
+    margin-left: -1vw;
+    width: 102%;
+    height: 80vw;
+    font-size: 5.8vw;
+}
+.menu-loader {
+    margin-left: 13vw;
+    width: 100%;
+    height: 12vw;
+    background-color: #8C9C2E;
+    color: white;
+    font-size: 5vw;
+    padding: 2vw;
+}
+.menu-laoder:hover {
+    background-color: red;   
+}
+#loaded-menu {
+    position: relative;
+    height: 80vw;
+    margin-top: 14vw;
+    width: 100%;
+    color: white;
+    text-transform: none;
+    padding-top: 6vw
+}
 .logo-lunch {
     z-index: 10;
     position: relative;
@@ -256,6 +283,163 @@ input:focus {
     height: 42vw;
     margin-top: 86vw;
     color: white;
+    text-transform: none;
+}
+.menu-item-container {
+    height: 55vw;
+    width: 100vw;
+}
+.image-wrapper {
+    background-color: rgba(66, 156, 121, 0.8);
+    width: 30vw;
+    height: 30vw;
+    left: 35vw;
+    position: relative;
+    border-radius: 40vw;
+}
+.menu-item-container .image-wrapper img {
+    position: absolute;
+    margin: 5vw;
+    width: 20vw;
+    -webkit-filter: invert(100%);
+}
+.menu-item-container p {
+    font-size: 4.4vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 2vw;
+}
+/* OVERLAY */
+.order-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+}
+.order-message {
+    position: absolute;
+    top: 50vw;
+    border-top-left-radius: 2.5vw;
+    border-top-right-radius: 2.5vw;
+    left: 15vw;
+    right: 15vw;
+    height: 45vw;
+    background-color: #429c79;
+    z-index: 1;
+    text-align: center;
+}
+.order-message h3 {
+    color: white;
+    font-size: 6vw;
+}
+.order-message p {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    text-transform: none;
+    font-size: 3vw;
+    text-align: justify;
+}
+.order-message p span {
+    font-weight: bold;
+    color: black;
+}
+.order-message input {
+    width: 34vw;
+    height: 10vw;
+    background-color: #7FC3A9;
+    width: 66vw;
+    color: black;
+    text-align: left;
+    padding: 0;
+    text-indent: 2vw;
+    position: absolute;
+    left: 2vw;
+    bottom: 2vw;
+}
+.order-message input::-webkit-input-placeholder {
+    color: #3A7D64;
+}
+.order-message input:focus {
+    background-color: #BBF3DD;
+}
+.order-cancel {
+    position: absolute;
+    background-color: #429c79;
+    height: 6vw;
+    color: white;
+    font-size: 4vw;
+    padding: 10px;
+    border-bottom-left-radius: 2.5vw;
+    left: 15vw;
+    top: 95.2vw;
+    width: 30vw;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+.order-ok {
+    position: absolute;
+    background-color: #429c79;
+    height: 6vw;
+    color: white;
+    font-size: 4vw;
+    padding: 10px;
+    border-bottom-right-radius: 2.5vw;
+    right: 15vw;
+    top: 95.2vw;
+    width: 29.2vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+.order-ok:hover {
+    background-color: #2F7B5E;
+}
+.order-cancel:hover {
+    background-color: #2F7B5E;
+}
+.error-message {
+    position: absolute;
+    top: 30vw;
+    left: 10vw;
+    right: 10vw;
+    height: 30vw;
+    background-color: #FFBFBF;
+    border-radius: 2.5vw;
+    border: solid 1px #F37575;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    display: none;
+}
+.error-message p {
+    padding: 2.5vw;
+    text-align: center;
+    font-size: 4vw;
+    color: #844242;
+    font-weight: 600;
+    text-transform: none;
+}
+.success-message {
+    position: absolute;
+    top: 30vw;
+    left: 10vw;
+    right: 10vw;
+    height: 30vw;
+    background-color: #E3FFEA;
+    border-radius: 2.5vw;
+    border: solid 1px #75F396;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    display: none;
+}
+.success-message p {
+    padding: 2.5vw;
+    text-align: center;
+    font-size: 4vw;
+    color: #428459;
+    font-weight: 600;
     text-transform: none;
 }
 .info-container {
