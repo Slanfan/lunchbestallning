@@ -285,7 +285,7 @@ input:focus {
     color: white;
     text-transform: none;
 }
-.menu-item-container-main {
+.menu-item-container.main {
     height: 55vw;
     width: 100vw;
 }
