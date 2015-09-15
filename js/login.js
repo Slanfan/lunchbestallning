@@ -1,11 +1,11 @@
 $.beforeReady(function() {
 	if(localStorage.getItem("username") != null) {
-		// load_menu();  uncomment before release 
-		$('start').removeClass('visible');
-		$('start').removeClass('hidden');
+		load_menu(); 
+	} else {
+		$('#start').removeClass('visible');
+		$('#start').addClass('hidden');
 	}
 });
-
 $(document).ready(function() {
 	//PushbotsPlugin.resetBadge(); /* uncomment before release */
 });

@@ -180,6 +180,7 @@ input {
     background-size: 6vw;
     text-indent: 11vw;
     padding: 1vw;
+    border-radius: 0;
 }
 .username {
     background-image: url("../img/user.png");
