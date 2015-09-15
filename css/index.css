@@ -470,6 +470,18 @@ input:focus {
 .upper {
     text-transform: uppercase;
 }
+.user-data {
+    color: white;
+    font-size: 4.5vw;
+    padding: 2vw;
+    background-color: rgb(91, 100, 92);
+}
+.user-data p {
+    text-transform: none;
+}
+.user-data table {
+    padding: 0;
+}
 
 #start.visible,
 .info-container.visible {

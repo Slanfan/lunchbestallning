@@ -3,13 +3,13 @@ $(document).ready(function() {
 
 	if(localStorage.getItem("username") != null) {
 		console.log(localStorage.getItem("username"));
-		load_menu(); 
 		$('#start').removeClass('visible');
 		$('#start').addClass('hidden');
+		load_menu();
+		load_user_data();
 	} else {
 		// nothing, show login
 	}
-
 });
 
 function login() {
