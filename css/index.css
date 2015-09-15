@@ -484,11 +484,11 @@ input:focus {
     text-transform: none;
     font-weight: lighter;
 }
-.1-third {
+.user-data .title .1-third {
     display: inline-block;
     width: 36%;
 }
-.2-third {
+.user-data .title .2-third {
     display: inline-block;
     width: 60%;
 }
