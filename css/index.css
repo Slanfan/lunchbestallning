@@ -478,13 +478,22 @@ input:focus {
     background-color: #F0F0F0;
     display: inline-block;
     height: 50vw;
+    width: 82vw;
 }
 #order-history {
+    color: black;
+    font-size: 4.5vw;
+    padding: 2vw;
     background-color: #F0F0F0;
     display: inline-block;
-    overflow-y: scroll;
-    padding: 2vw;
     height: 92vw;
+    width: 82vw;
+}
+#logout {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #AA3939;
 }
 .user-data .title {
     text-transform: uppercase;
