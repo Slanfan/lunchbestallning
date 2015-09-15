@@ -65,6 +65,7 @@ body {
 }
 #main-left {
     position: absolute;
+    background-color: #F0F0F0;
     left: 0;
     width: 86vw;
     height: 100vh;
@@ -471,10 +472,19 @@ input:focus {
     text-transform: uppercase;
 }
 .user-data {
-    color: white;
+    color: black;
     font-size: 4.5vw;
     padding: 2vw;
-    background-color: rgb(91, 100, 92);
+    background-color: #F0F0F0;
+    display: inline-block;
+    height: 50vw;
+}
+#order-history {
+    background-color: #F0F0F0;
+    display: inline-block;
+    overflow-y: scroll;
+    padding: 2vw;
+    height: 92vw;
 }
 .user-data .title {
     text-transform: uppercase;
@@ -484,11 +494,11 @@ input:focus {
     text-transform: none;
     font-weight: lighter;
 }
-.user-data .title .1-third {
+div .title .1-third {
     display: inline-block;
     width: 36%;
 }
-.user-data .title .2-third {
+div .title .2-third {
     display: inline-block;
     width: 60%;
 }
