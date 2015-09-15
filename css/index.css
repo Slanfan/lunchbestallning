@@ -138,7 +138,9 @@ body {
     width: 100%;
     color: white;
     text-transform: none;
-    padding-top: 6vw
+    padding-top: 6vw;
+    background-image: url('../img/menu-background.jpg');
+    background-size: cover;
 }
 .logo-lunch {
     z-index: 10;

@@ -2,12 +2,12 @@ $(document).ready(function() {
 	//PushbotsPlugin.resetBadge(); /* uncomment before release */
 
 	if(localStorage.getItem("username") != null) {
-		// nothing, show login
-	} else {
 		console.log(localStorage.getItem("username"));
 		load_menu(); 
 		$('#start').removeClass('visible');
 		$('#start').addClass('hidden');
+	} else {
+		// nothing, show login
 	}
 
 });
