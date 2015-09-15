@@ -476,11 +476,13 @@ input:focus {
     padding: 2vw;
     background-color: rgb(91, 100, 92);
 }
-.user-data.title {
+.user-data .title {
     text-transform: uppercase;
+    font-weight: bolder;
 }
-.user-data.info {
+.user-data .info {
     text-transform: none;
+    font-weight: lighter;
 }
 
 #start.visible,
