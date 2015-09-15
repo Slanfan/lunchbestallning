@@ -78,8 +78,10 @@ function login() {
     		} else {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning misslyckades, försök igen');
-    			$('.info-container').addClass('hidden');
-    			$('.info-container').removeClass('visible');
+    			setTimeout(function() {
+    				$('.info-container').addClass('hidden');
+    				$('.info-container').removeClass('visible');
+    			}, 2000);
     		}
     	}
     });

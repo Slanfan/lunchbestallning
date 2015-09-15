@@ -30,6 +30,9 @@ function toggle_menu() {
 
 function toggle_settings() {
 	if($('#main').hasClass('left')) {
+		if($('#order-history').is(':empty')) {
+			load_order_logg();
+    	}
 		$('#main').removeClass('left');
 		$('#main').addClass('center');
 	} else {
@@ -42,6 +45,17 @@ function load_user_data() {
     $('#employee-number').html(localStorage.getItem("employee-number"));
     $('#employee-name').html(localStorage.getItem("employee-name"));
     $('#employee-email').html(localStorage.getItem("employee-email"));
+}
+function load_order_logg() {
+	// store url to load data from
+	var url = 'http://www.lunchbestallning.se/app/get-order-history.php?employee_number=' + localStorage.getItem("employee-number");
+
+	// load data from url and add to container
+	$.get(url, function(data){
+		console.log(data);
+		$('#order-history').empty();
+		$('#order-history').append(data);
+	});	
 }
 function load_menu() {
 	// store menu-url to load in variable
