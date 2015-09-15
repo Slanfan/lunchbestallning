@@ -484,6 +484,30 @@ input:focus {
     text-transform: none;
     font-weight: lighter;
 }
+.1-third {
+    display: inline-block;
+    width: 36%;
+}
+.2-third {
+    display: inline-block;
+    width: 60%;
+}
+#employee-company {
+    height: 10vw;
+}
+#employee-name {
+    height: 10vw;
+    width: 60%;
+    display: inline-block;
+}
+#employee-number {
+    height: 10vw;
+    width: 36%;
+    display: inline-block;
+}
+#employee-email {
+    height: 10vw;
+}
 
 #start.visible,
 .info-container.visible {
