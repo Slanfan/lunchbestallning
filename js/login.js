@@ -49,7 +49,9 @@ function login() {
     			// store user information locally
 			    localStorage.setItem("username", username);
 			    localStorage.setItem("company", data.responseJSON.company);
-			    localStorage.setItem("employee_number", data.responseJSON.number);
+			    localStorage.setItem("employee-number", data.responseJSON.number);
+			    localStorage.setItem("employee-name", data.responseJSON.fullname);
+			    localStorage.setItem("employee-email", data.responseJSON.email);
 			    PushbotsPlugin.setAlias(username);
 
 			    // load menu in main window
@@ -87,7 +89,9 @@ function logout() {
 	// remove stored userinformation
 	localStorage.removeItem("username");
 	localStorage.removeItem("company");
-	localStorage.removeItem("employee_number");
+	localStorage.removeItem("employee-number");
+	localStorage.removeItem("employee-name");
+	localStorage.removeItem("employee-email");
 
 	// hide login and hide main app
 	$('#start').removeClass('hidden');

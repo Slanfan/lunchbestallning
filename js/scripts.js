@@ -37,7 +37,12 @@ function toggle_settings() {
 		$('#main').addClass('left');
 	}
 }
-
+function load_user_data() {
+    $('#employee-company').html(localStorage.getItem("company"));
+    $('#employee-number').html(localStorage.getItem("employee-number"));
+    $('#employee-name').html(localStorage.getItem("employee-name"));
+    $('#employee-email').html(localStorage.getItem("employee-email"));
+}
 function load_menu() {
 	// store menu-url to load in variable
 	var url = 'http://www.lunchbestallning.se/app/todays-menu.php?company=' + localStorage.getItem("company");

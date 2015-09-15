@@ -467,6 +467,9 @@ input:focus {
     margin: 0;
     padding: 0;
 }
+.upper {
+    text-transform: uppercase;
+}
 
 #start.visible,
 .info-container.visible {
