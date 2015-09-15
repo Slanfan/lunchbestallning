@@ -29,10 +29,14 @@ function toggle_menu() {
 }
 
 function toggle_settings() {
+	if($('#order-history').html() == '') {
+		console.log('History is empty');
+		load_order_logg();
+	} else {
+		console.log('History is loaded');
+	}
+	
 	if($('#main').hasClass('left')) {
-		if($('#order-history').html() == '') {
-			load_order_logg();
-    	}
 		$('#main').removeClass('left');
 		$('#main').addClass('center');
 	} else {
