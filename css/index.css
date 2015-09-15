@@ -503,11 +503,15 @@ input:focus {
     text-transform: none;
     font-weight: lighter;
 }
-.user-data .1-third {
+.user-data .title-1-third {
+    text-transform: uppercase;
+    font-weight: bolder;
     display: inline-block;
     width: 36%;
 }
-.user-data .2-third {
+.user-data .title-2-third {
+    text-transform: uppercase;
+    font-weight: bolder;
     display: inline-block;
     width: 60%;
 }
