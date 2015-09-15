@@ -1,21 +1,14 @@
-// $.beforeReady(function() {
-// 	if(localStorage.getItem("username") != null) {
-// 		load_menu(); 
-// 	} else {
-// 		$('#start').removeClass('visible');
-// 		$('#start').addClass('hidden');
-// 	}
-// });
 $(document).ready(function() {
 	//PushbotsPlugin.resetBadge(); /* uncomment before release */
 
 	if(localStorage.getItem("username") != null) {
-		load_menu(); 
+		// nothing, show login
 	} else {
+		load_menu(); 
 		$('#start').removeClass('visible');
 		$('#start').addClass('hidden');
 	}
-	
+
 });
 
 function login() {
