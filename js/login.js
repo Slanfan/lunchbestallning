@@ -54,9 +54,6 @@ function login() {
 			    localStorage.setItem("employee-email", data.responseJSON.email);
 			    PushbotsPlugin.setAlias(username);
 
-			    // load menu in main window
-			    load_menu();
-
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			
@@ -73,6 +70,10 @@ function login() {
 					$('#password').val('');
 					$('.info-container').addClass('hidden');
     				$('.info-container').removeClass('visible');
+    				// load menu in main window
+			    	load_menu();
+			    	// load user data
+			    	load_user_data();
 				}, 2010);
     		} else {
     			// update textinfo and fade out box
