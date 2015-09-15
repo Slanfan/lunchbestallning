@@ -134,7 +134,7 @@ body {
 #loaded-menu {
     position: relative;
     height: 80vw;
-    margin-top: 14vw;
+    margin-top: 12vw;
     width: 100%;
     color: white;
     text-transform: none;
@@ -285,15 +285,19 @@ input:focus {
     color: white;
     text-transform: none;
 }
-.menu-item-container {
+.menu-item-container-main {
     height: 55vw;
     width: 100vw;
+}
+.menu-item-container {
+    height: 62vw;
+    width: 86vw;
 }
 .image-wrapper {
     background-color: rgba(66, 156, 121, 0.8);
     width: 30vw;
     height: 30vw;
-    left: 35vw;
+    left: 28vw;
     position: relative;
     border-radius: 40vw;
 }
@@ -304,10 +308,12 @@ input:focus {
     -webkit-filter: invert(100%);
 }
 .menu-item-container p {
-    font-size: 4.4vw;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    font-size: 4vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
     margin-top: 2vw;
+    text-align: center;
+    height: 16vw;
 }
 /* OVERLAY */
 .order-overlay {
