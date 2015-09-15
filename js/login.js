@@ -1,47 +1,20 @@
-
-$(document).ready(function() {
-
-	//PushbotsPlugin.resetBadge(); /* uncomment before release */
-
+$.beforeReady(function() {
 	if(localStorage.getItem("username") != null) {
-		load_menu(); /* uncomment before release */
-		$('#main').show();
-	} else {
-		$('#login').addClass('right');
-		$('#login').show();
-		$('#start').show();
+		// load_menu();  uncomment before release 
+		$('start').removeClass('visible');
+		$('start').removeClass('hidden');
 	}
 });
 
-/* ----> web testing (comment before release)
-function login() {
-	// store user information locally
-	localStorage.setItem("username", username);
-	localStorage.setItem("company", "Elgiganten Backoffice");
-	localStorage.setItem("employee_number", "23441116");
+$(document).ready(function() {
+	//PushbotsPlugin.resetBadge(); /* uncomment before release */
+});
 
-	// update textinfo and fade out box
-	$('#info-text').text('inloggning lyckades');
-	setTimeout(function() {
-		$('.info-box').fadeOut(500);
-	}, 1000);
-	setTimeout(function() {
-		// show main and hide login
-	    $('#main').fadeIn(900);
-	}, 2000);
-	setTimeout(function() {
-		// empty inputs and hide login
-		$('#username').val('');
-		$('#password').val('');
-		$('#login').hide();
-	}, 3500);
-}
-/*/
-// ----> release version (uncomment before release)
 function login() {
 
 	// uppdatera textinfo och visa loader
-	$('.info-box').show();
+	$('.info-container').removeClass('hidden');
+	$('.info-container').addClass('visible');
 	$('#info-text').text('kontaktar server');
 
 	// get input information
@@ -63,9 +36,8 @@ function login() {
     		// update textinfo
     		$('#info-text').text('anslutning misslyckades');
     		// fade out info box
-    		setTimeout(function() {
-				$('.info-box').fadeOut(500);
-			}, 1000);
+    		$('.info-container').addClass('hidden');
+    		$('.info-container').removeClass('visible');
     	},
     	complete: function(data) {
     		console.log(data.responseJSON);
@@ -85,30 +57,29 @@ function login() {
     			$('#info-text').text('inloggning lyckades');
     			
     			// fade in main
-    			$('#main').addClass('fading');
-    			$('#main').removeClass('fadedOut');
-    			$('#main').show();
-    			
-    			// empty inputs and hide login and info
-    			setTimeout(function() {
-    				$('#username').val('');
+    			$('#start').removeClass('visible');
+				$('#start').addClass('hidden');
+				$('#login').removeClass('visible');
+				$('#login').addClass('hidden');
+				
+				// empty inputs and hide login and info
+				setTimeout(function() {
+					toggle_login();
+					$('#username').val('');
 					$('#password').val('');
-					$('#login').hide();
-					$('#start').hide();
-					$('.info-box').hide();
-					$('#main').removeClass('fading');
-    			}, 2001)
+					$('.info-container').addClass('hidden');
+    				$('.info-container').removeClass('visible');
+				}, 2010);
     		} else {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning misslyckades, försök igen');
-    			setTimeout(function() {
-    				$('.info-box').fadeOut(500);
-    			}, 2000);
+    			$('.info-container').addClass('hidden');
+    			$('.info-container').removeClass('visible');
     		}
     	}
     });
 }
-//*/
+
 function logout() {
 
 	// remove stored userinformation
@@ -117,39 +88,11 @@ function logout() {
 	localStorage.removeItem("employee_number");
 
 	// hide login and hide main app
-	$('#login').show();
-	$('#start').show();
-	$('#main').toggleClass('fadedOut');
-	$('#main').toggleClass('fading');
+	$('#start').removeClass('hidden');
+	$('#start').addClass('visible');
+	$('#login').removeClass('hidden');
+	$('#login').addClass('visible');
 	setTimeout(function() {
-		if($('#main').hasClass('right')) {
-			$('#main').removeClass('transition');
-			$('#main').removeClass('right');
-			$('#main').addClass('transition');
-			$('#main').addClass('center');
-			setTimeout(function() {
-		 		$('#settings').toggle();
-		 	}, 351);
-		} else {
-			$('#settings').toggle();
-			$('#main').removeClass('transition');
-			$('#main').removeClass('center');
-			$('#main').addClass('transition');
-			$('#main').addClass('right');
-		}
-	},2001)
-}
-
-function toogle_login() {
-	if($('#login').hasClass('right')) {
-		$('#login').removeClass('transition');
-		$('#login').removeClass('right');
-		$('#login').addClass('transition');
-		$('#login').addClass('center');
-	} else {
-		$('#login').removeClass('transition');
-		$('#login').removeClass('center');
-		$('#login').addClass('transition');
-		$('#login').addClass('right');
-	}
+		toggle_settings();
+	}, 2010);
 }

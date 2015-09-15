@@ -45,31 +45,40 @@
     </head>
     <body>
         <div class="app-container">
-            <div class="app" id="start">
+            <div class="app visible" id="start">
                 <img class="logo-lunch" src="img/logo-lunch.png">
                 <video class="app-video" autoplay loop webkit-playsinline preload="true">
                     <source src="vid/start.mp4" type="video/mp4" />
                 </video>
                 <div class="start-footer">
-                    <button class="start-login" onclick="toogle_login()">
+                    <button class="start-login" onclick="toggle_login()">
                         logga in
                     </button>
-                    <button class="start-help" onclick="show_help()">
+                    <button class="start-help" onclick="toggle_registration()">
                         hjälp
                     </button>
-                </div>  
+                </div>
             </div>
             
-            <div class="app" id="login">
+            <div class="app right" id="registration">
+                <h1>registrering</h1>
+                <div>
+                    <div class="back-button" onclick="toggle_registration()">
+                        <img src="img/left-arrow.png">
+                    </div> 
+                </div>
+            </div>
+
+            <div class="app right visible" id="login">
                 <h1>logga in</h1>
                 <div>
-                    <div class="back-button" onclick="toogle_login()">
+                    <div class="back-button" onclick="toggle_login()">
                         <img src="img/left-arrow.png">
                     </div> 
                     <input type="text" class="username" placeholder="Användarnamn" id="username">
                     <input type="password" class="password" placeholder="Lösenord" id="password">
                     <button type="button" onclick="login()">logga in</button>
-                    <div class="info-container">
+                    <div class="info-container hidden">
                         <div class="info-box">
                             <img src="img/loader.gif">
                             <p id="info-text"></p>
@@ -78,49 +87,32 @@
                 </div>
             </div>
 
-            <div class="app" id="main">
-                <div class="start">
-                    <img class="main-menu-bars" src="img/menu-ellipsis.png" onclick="toggle_settings()" />
-                    <img class="main-logo-lunch" src="img/logo-lunch.png" />
-                    <img class="main-menu-icon" src="img/menu-icon-1.png" onclick="toggle_menu()" />
-                    <div class="menu-slider" id="todays-menu">
-                        <img src="img/loader.gif">
+            <div class="app" id="main" data-identity="settings-screen">
+                <div id="main-left">
+                    <button type="button" onclick="logout()">logga ut</button>
+                </div>
+                <div id="main-center" data-identity="start-screen">
+                    <div class="start">
+                        <img class="main-menu-bars" src="img/menu-ellipsis.png" onclick="toggle_settings()" />
+                        <img class="main-logo-lunch" src="img/logo-lunch.png" />
+                        <img class="main-menu-icon" src="img/menu-icon-1.png" onclick="toggle_menu()" />
+                        <div class="menu-slider" id="todays-menu">
+                            <img src="img/loader.gif">
+                        </div>
+                    </div>
+                </div>
+                <div id="main-right" data-identity="manu-screen">
+                    <div class="menu-header">
+                        veckomeny
+                    </div>
+                    <div class="calendar">
+                    </div>
+                    <button class="menu-loader">ladda meny</button>
+                    <div id="loaded-menu">
                     </div>
                 </div>
             </div>
 
-            <div id="menu">
-                <div class="menu-header">
-                    veckomeny
-                </div>
-                <div class="calendar">
-                </div>
-                <button class="menu-loader">ladda meny</button>
-                <div id="loaded-menu">
-                </div>
-            </div>
-
-            <div id="settings">
-                <button type="button" onclick="logout()">logga ut</button>
-            </div>
-
-        </div>
-
-        <div class="order-overlay">
-            <div class="order-message">
-                <h3>lunchbeställning</h3>
-                <p></p>
-                <input type="text" id="order-request" placeholder="Eventuella önskemål" />
-                <input type="hidden" id="order-course" />
-            </div>
-            <div class="order-cancel" onclick="hide_message()">avbryt</div>
-            <div class="order-ok" onclick="place_order()">ok</div>
-        </div>
-        <div class="error-message">
-            <p>Här kommer det visas ett felmeddelande</p>
-        </div>
-        <div class="success-message">
-            <p>Här kommer det visas ett meddelande</p>
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
