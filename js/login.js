@@ -4,6 +4,7 @@ $(document).ready(function() {
 	if(localStorage.getItem("username") != null) {
 		// nothing, show login
 	} else {
+		console.log(localStorage.getItem("username"));
 		load_menu(); 
 		$('#start').removeClass('visible');
 		$('#start').addClass('hidden');
@@ -57,7 +58,7 @@ function login() {
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
     			
-    			// fade in main
+    			// fade out start
     			$('#start').removeClass('visible');
 				$('#start').addClass('hidden');
 				$('#login').removeClass('visible');

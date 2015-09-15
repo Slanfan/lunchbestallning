@@ -289,6 +289,9 @@ input:focus {
     height: 55vw;
     width: 100vw;
 }
+.image-wrapper.main {
+    left: 35vw;
+}
 .menu-item-container {
     height: 62vw;
     width: 86vw;
