@@ -495,19 +495,19 @@ input:focus {
     bottom: 0;
     background-color: #AA3939;
 }
-.user-data.title {
+.user-data .title {
     text-transform: uppercase;
     font-weight: bolder;
 }
-.user-data.info {
+.user-data .info {
     text-transform: none;
     font-weight: lighter;
 }
-.user-data.1-third {
+.user-data .1-third {
     display: inline-block;
     width: 36%;
 }
-.user-data.2-third {
+.user-data .2-third {
     display: inline-block;
     width: 60%;
 }
