@@ -53,13 +53,23 @@ function load_user_data() {
 function load_order_logg() {
 	// store url to load data from
 	var url = 'http://www.lunchbestallning.se/app/get-order-history.php?employee_number=' + localStorage.getItem("employee-number");
-
 	// load data from url and add to container
 	$.get(url, function(data){
 		console.log(data);
 		$('#order-history').empty();
 		$('#order-history').append(data);
 	});	
+}
+function load_more(start_num) {
+	// remove last li from history orders (load button)
+	$('.load-more').remove();
+	// store url to load data from
+	var url = 'http://www.lunchbestallning.se/app/get-order-history.php?employee_number=' + localStorage.getItem("employee-number");
+	// load data from url and add to container
+	$.get(url, function(data){
+		console.log(data);
+		$('#order-history').append(data);
+	});
 }
 function load_menu() {
 	// store menu-url to load in variable
@@ -93,7 +103,7 @@ function place_order() {
 	var course_id = $('#order-course').val();
 	var course_request = $('#order-request').val();
 	var url = 'http://www.lunchbestallning.se/app/place_order.php';
-	var data = { "course_id": course_id, "request": course_request, "username": localStorage.getItem("username"), "employee_number": localStorage.getItem("employee_number") };
+	var data = { "course_id": course_id, "request": course_request, "username": localStorage.getItem("username"), "employee-number": localStorage.getItem("employee_number") };
 
 	// send order
 	$.ajax({

@@ -542,15 +542,24 @@ input:focus {
     text-transform: none;
     font-weight: lighter;
     display: inline-block;
+    text-align: right;
     width: 36%;
 }
 #history-orders {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 20vw;
 }
 #history-orders li {
     width: 100%;
     border-top: 1px solid #C5C5C5;
+}
+.load-more {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding: 2vw;
+    font-weight: 800;
 }
 .order-timestamp {
     display: inline-block;
