@@ -64,7 +64,7 @@ function load_more(start_num) {
 	// remove last li from history orders (load button)
 	$('.load-more').remove();
 	// store url to load data from
-	var url = 'http://www.lunchbestallning.se/app/get-order-history.php?employee_number=' + localStorage.getItem("employee-number");
+	var url = 'http://www.lunchbestallning.se/app/get-order-history-more.php?employee_number=' + localStorage.getItem("employee-number");
 	// load data from url and add to container
 	$.get(url, function(data){
 		console.log(data);
