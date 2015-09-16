@@ -488,6 +488,7 @@ input:focus {
     display: inline-block;
     height: 92vw;
     width: 82vw;
+    overflow-y: scroll;
 }
 #logout {
     position: absolute;
@@ -531,6 +532,48 @@ input:focus {
 #employee-email {
     height: 10vw;
 }
+.title-amount {
+    text-transform: uppercase;
+    font-weight: bolder;
+    display: inline-block;
+    width: 60%;
+}
+.info-amount {
+    text-transform: none;
+    font-weight: lighter;
+    display: inline-block;
+    width: 36%;
+}
+#history-orders {
+    list-style-type: none;
+    padding: 0;
+}
+#history-orders li {
+    width: 100%;
+    border-top: 1px solid #C5C5C5;
+}
+.order-timestamp {
+    display: inline-block;
+    margin: 0;
+    padding: 1vw;
+}
+.order-course {
+    text-transform: none;
+    display: inline-block; 
+    width: 75%;
+    vertical-align: top;
+}
+.order-amount {
+    display: inline-block;
+    text-transform: none;
+    width: 23%;
+    vertical-align: top;
+    text-align: right;
+}
+.canceled {
+    text-decoration: line-through;
+}
+
 
 #start.visible,
 .info-container.visible {
