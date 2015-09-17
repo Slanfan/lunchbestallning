@@ -489,6 +489,7 @@ input:focus {
     height: 92vw;
     width: 82vw;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 #logout {
     position: absolute;
@@ -573,6 +574,7 @@ input:focus {
     display: inline-block; 
     width: 75%;
     vertical-align: top;
+    font-size: 3.5vw;
 }
 .order-amount {
     display: inline-block;
