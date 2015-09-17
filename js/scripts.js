@@ -68,8 +68,13 @@ function load_more(start_num) {
 	// load data from url and add to container
 	$.get(url, function(data){
 		console.log(data);
-		$('#order-history').append(data).page();
+		$('#order-history').append(data).redraw();
 	});
+}
+$.fn.redraw = function() {
+	$(this).each(function () {
+		var redraw = this.offsetHeight;
+	})
 }
 function load_menu() {
 	// store menu-url to load in variable
