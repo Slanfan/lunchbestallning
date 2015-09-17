@@ -89,7 +89,7 @@ function load_menu() {
 	var tomorrow = new Date();
 	tomorrow.setDate(tomorrow.getDate() + 1);
 	$('#todays-menu-date').empty();
-    if(today.getHours()) > 9) {
+    if(today.getHours() > 9) {
     	$('#todays-menu-date').append('meny ' + tomorrow.getDate() + ' ' + month_name[tomorrow.getMonth()]);
     	menu_date = tomorrow.getFullYear() + '-' + month_numbers[tomorrow.getMonth()] + '-' + zeroPad(tomorrow.getDate(), 2);
     } else {
