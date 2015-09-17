@@ -90,7 +90,7 @@ function load_menu() {
 	tomorrow.setDate(tomorrow.getDate() + 1);
 	$('#todays-menu-date').empty();
     if(today.getHours() > 9) {
-    	$('#todays-menu-date').append('meny ' + tomorrow.getDate() + ' ' + month_name[tomorrow.getMonth()]);
+    	$('#todays-menu-date').append('meny ' + tomorrow.getDate() + ' ' + month_names[tomorrow.getMonth()]);
     	menu_date = tomorrow.getFullYear() + '-' + month_numbers[tomorrow.getMonth()] + '-' + zeroPad(tomorrow.getDate(), 2);
     } else {
     	$('#todays-menu-date').append('meny ' + today.getDate() + ' ' + month_names[today.getMonth()]);
