@@ -1,16 +1,16 @@
-$(document).ready(function() {
-	//PushbotsPlugin.resetBadge(); /* uncomment before release */
+// $(document).ready(function() {
+// 	//PushbotsPlugin.resetBadge(); /* uncomment before release */
 
-	if(localStorage.getItem("username") != null) {
-		console.log(localStorage.getItem("username"));
-		$('#start').removeClass('visible');
-		$('#start').addClass('hidden');
-		load_menu();
-		load_user_data();
-	} else {
-		// nothing, show login
-	}
-});
+// 	if(localStorage.getItem("username") != null) {
+// 		console.log(localStorage.getItem("username"));
+// 		$('#start').removeClass('visible');
+// 		$('#start').addClass('hidden');
+// 		load_menu();
+// 		load_user_data();
+// 	} else {
+// 		// nothing, show login
+// 	}
+// });
 
 function login() {
 
