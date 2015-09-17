@@ -22,9 +22,11 @@ function toggle_menu() {
 	if($('#main').hasClass('right')) {
 		$('#main').removeClass('right');
 		$('#main').addClass('center');
+		$('.main-menu-button-right').addClass('full-height');
 	} else {
 		$('#main').removeClass('center');
 		$('#main').addClass('right');
+		$('.main-menu-button-right').removeClass('full-height');
 	}
 }
 
@@ -39,9 +41,11 @@ function toggle_settings() {
 	if($('#main').hasClass('left')) {
 		$('#main').removeClass('left');
 		$('#main').addClass('center');
+		$('.main-menu-button-left').addClass('full-height');
 	} else {
 		$('#main').removeClass('center');
 		$('#main').addClass('left');
+		$('.main-menu-button-left').removeClass('full-height');
 	}
 }
 function load_user_data() {

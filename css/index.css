@@ -266,18 +266,30 @@ input:focus {
     margin-left: 34vw;
     width: 32vw;
 }
-.main-menu-bars {
+.main-menu-button-left {
     position: absolute;
     top: 0;
     left: 0;
+    width: 14vw;
+    height: 22vw;
+}
+.main-menu-button-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 14vw;
+    height: 22vw;
+}
+.main-menu-button-left.full-height,
+.main-menu-button-right.full-height {
+    height: 100vh;
+}
+.main-menu-bars {
     height: 12vw;
     margin-top: 6vw;
     margin-left: 4vw;
 }
 .main-menu-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
     height: 12vw;
     margin-top: 6vw;
     margin-right: 4vw;
@@ -567,7 +579,6 @@ input:focus {
 .order-timestamp {
     display: inline-block;
     margin: 0;
-    padding: 1vw;
 }
 .order-course {
     text-transform: none;

@@ -110,9 +110,13 @@
                 </div>
                 <div id="main-center" data-identity="start-screen">
                     <div class="start">
-                        <img class="main-menu-bars" src="img/menu-ellipsis.png" onclick="toggle_settings()" />
+                        <div class="main-menu-button-left" onclick="toggle_settings()">
+                            <img class="main-menu-bars" src="img/menu-ellipsis.png" />
+                        </div>
+                        <div class="main-menu-button-right" onclick="toggle_menu()">
+                            <img class="main-menu-icon" src="img/menu-icon-1.png" />
+                        </div>
                         <img class="main-logo-lunch" src="img/logo-lunch.png" />
-                        <img class="main-menu-icon" src="img/menu-icon-1.png" onclick="toggle_menu()" />
                         <div class="menu-slider" id="todays-menu">
                             <img src="img/loader.gif">
                         </div>
