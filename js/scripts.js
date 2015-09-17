@@ -22,11 +22,11 @@ function toggle_menu() {
 	if($('#main').hasClass('right')) {
 		$('#main').removeClass('right');
 		$('#main').addClass('center');
-		$('.main-menu-button-right').addClass('full-height');
+		$('.main-menu-button-right').removeClass('full-height');
 	} else {
 		$('#main').removeClass('center');
 		$('#main').addClass('right');
-		$('.main-menu-button-right').removeClass('full-height');
+		$('.main-menu-button-right').addClass('full-height');
 	}
 }
 
@@ -41,11 +41,11 @@ function toggle_settings() {
 	if($('#main').hasClass('left')) {
 		$('#main').removeClass('left');
 		$('#main').addClass('center');
-		$('.main-menu-button-left').addClass('full-height');
+		$('.main-menu-button-left').removeClass('full-height');
 	} else {
 		$('#main').removeClass('center');
 		$('#main').addClass('left');
-		$('.main-menu-button-left').removeClass('full-height');
+		$('.main-menu-button-left').addClass('full-height');
 	}
 }
 function load_user_data() {
@@ -75,9 +75,30 @@ function load_more(start_num) {
 		$('#history-orders').append(data)
 	});
 }
+function zeroPad(num, places) {
+	var zero = places - num.toString().length + 1;
+	return Array(+(zero > 0 && zero)).join("0") + num;
+}
 function load_menu() {
+	// store month variables
+	var month_names = ["januari", "februrari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"];
+	var month_numbers = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+	// get time
+	var menu_date = '';
+	var today = new Date();
+	var tomorrow = new Date();
+	tomorrow.setDate(tomorrow.getDate() + 1);
+	$('#todays-menu-date').empty();
+    if(now.getHours()) > 9) {
+    	$('#todays-menu-date').append('meny ' + tomorrow.getDate() + ' ' + month_name[tomorrow.getMonth()]);
+    	menu_date = tomorrow.getFullYear() + '-' + month_numbers[tomorrow.getMonth()] + '-' + zeroPad(tomorrow.getDate(), 2);
+    } else {
+    	$('#todays-menu-date').append('meny ' + today.getDate() + ' ' + month_names[today.getMonth()]);
+    	menu_date = today.getFullYear() + '-' + month_numbers[today.getMonth()] + '-' + zeroPad(today.getDate(), 2);
+    }
+
 	// store menu-url to load in variable
-	var url = 'http://www.lunchbestallning.se/app/todays-menu.php?company=' + localStorage.getItem("company");
+	var url = 'http://www.lunchbestallning.se/app/todays-menu.php?company=' + localStorage.getItem("company") + '&date=' + menu_date;
 
 	// load data from url and add slick slider to menu-slider
 	$.get(url, function(data){

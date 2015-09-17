@@ -35,7 +35,7 @@
     <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
     <preference name="detect-data-types" value="true" />
     <!-- ios: if set to true, app will terminate when home button is pressed -->
-    <preference name="exit-on-suspend" value="false" />
+    <preference name="exit-on-suspend" value="true" />
     <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="show-splash-screen-spinner" value="false" />
     <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->

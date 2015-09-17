@@ -275,6 +275,7 @@ input:focus {
 }
 .main-menu-button-right {
     position: absolute;
+    text-align: right;
     top: 0;
     right: 0;
     width: 14vw;
@@ -294,11 +295,22 @@ input:focus {
     margin-top: 6vw;
     margin-right: 4vw;
 }
+.menu-title {
+    color: white;
+    height: 10vw;
+    line-height: 10vw;
+    font-size: 4.5vw;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgba(156, 143, 51, 0.5);
+    margin-top: 72vw;
+}
 .menu-slider {
     height: 42vw;
-    margin-top: 86vw;
+    margin-top: 10vw;
     color: white;
     text-transform: none;
+    text-align: center;
 }
 .menu-item-container.main {
     height: 55vw;
