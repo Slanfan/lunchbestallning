@@ -68,7 +68,7 @@ function load_more(start_num) {
 	// load data from url and add to container
 	$.get(url, function(data){
 		console.log(data);
-		$(data).appendTo('#order-history');
+		$('#order-history').append(data).page();
 	});
 }
 function load_menu() {
