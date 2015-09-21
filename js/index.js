@@ -39,7 +39,7 @@ var app = {
             PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
         }
         if(PushbotsPlugin.isAndroid()){
-            PushbotsPlugin.initializeAndroid("PUSHBOTS_APP_ID", "SENDER_ID");
+            PushbotsPlugin.initializeAndroid("55ea8c9b177959e3438b4569", "141134204992");
         }
 
         PushbotsPlugin.resetBadge();
