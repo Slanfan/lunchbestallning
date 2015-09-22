@@ -56,7 +56,7 @@ var app = {
 
         setTimeout(function() {
             navigator.splashscreen.hide(); 
-        }, 2000);
+        }, 7000);
     }
 };
 
