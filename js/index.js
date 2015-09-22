@@ -53,6 +53,10 @@ var app = {
         } else {
             // nothing, show login
         }
+
+        setTimeout(function() {
+            navigator.splashscreen.hide(); 
+        }, 2000);
     }
 };
 
