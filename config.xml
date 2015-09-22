@@ -21,7 +21,7 @@
     <!-- all: default means both landscape and portrait are enabled -->
     <preference name="orientation" value="portrait" />
     <!-- all: possible values handset, tablet, or universal -->
-    <preference name="target-device" value="universal" />
+    <preference name="target-device" value="handset" />
     <!-- all: hides the status bar at the top of the screen -->
     <preference name="fullscreen" value="true" />
     <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
@@ -55,7 +55,14 @@
 
     <preference name="StatusBarOverlaysWebView" value="true" />             
     <preference name="StatusBarBackgroundColor" value="#8C9C2E" />
-
+    <!-- splash plugin android -->
+    <preference name="SplashScreen" value="foo" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <!-- splash plugin ios -->
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="4" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
 
 
     <!-- Default icons -->
@@ -110,10 +117,10 @@
     <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
     <gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
-    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
     <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />-->
     <gap:plugin name="com.pushbots.push" version="1.2.3" source="plugins.cordova.io" />
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
     
     
 
