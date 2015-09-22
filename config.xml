@@ -57,11 +57,11 @@
     <preference name="StatusBarBackgroundColor" value="#8C9C2E" />
     <!-- splash plugin android -->
     <preference name="SplashScreen" value="foo" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <!-- splash plugin ios -->
     <preference name="FadeSplashScreen" value="true" />
-    <preference name="FadeSplashScreenDuration" value="4" />
+    <preference name="FadeSplashScreenDuration" value="1" />
     <preference name="ShowSplashScreenSpinner" value="false" />
 
 
