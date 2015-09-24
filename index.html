@@ -51,19 +51,25 @@
                     <source src="vid/start.mp4" type="video/mp4" />
                 </video>
                 <div class="start-footer">
-                    <button class="start-login" onclick="toggle_login()">
+                    <button class="start-login" ontouchstart="toggle_login()">
                         logga in
                     </button>
-                    <button class="start-help" onclick="toggle_registration()">
+                    <button class="start-help" ontouchstart="toggle_registration()">
                         hjälp
                     </button>
                 </div>
+                <!-- <div class="main-menu-container down">
+                    <div class="menu-title" id="todays-menu-date" ontouchstart="toggle_main_menu()">
+                        laddar meny
+                    </div>
+                    <div class="menu-slider" id="todays-menu"></div>
+                </div> -->
             </div>
             
             <div class="app right" id="registration">
                 <h1>registrering</h1>
                 <div>
-                    <div class="back-button" onclick="toggle_registration()">
+                    <div class="back-button" ontouchstart="toggle_registration()">
                         <img src="img/left-arrow.png">
                     </div> 
                 </div>
@@ -72,12 +78,12 @@
             <div class="app right visible" id="login">
                 <h1>logga in</h1>
                 <div>
-                    <div class="back-button" onclick="toggle_login()">
+                    <div class="back-button" ontouchstart="toggle_login()">
                         <img src="img/left-arrow.png">
                     </div> 
                     <input type="text" class="username" placeholder="Användarnamn" id="username">
                     <input type="password" class="password" placeholder="Lösenord" id="password">
-                    <button type="button" onclick="login()">logga in</button>
+                    <button type="button" ontouchstart="login()">logga in</button>
                     <div class="info-container hidden">
                         <div class="info-box">
                             <img src="img/loader.gif">
@@ -106,20 +112,22 @@
                     <hr>
                     <div id="order-history"></div>
 
-                    <button type="button" onclick="logout()" id="logout">logga ut</button>
+                    <button type="button" ontouchstart="logout()" id="logout">logga ut</button>
                 </div>
                 <div id="main-center" data-identity="start-screen">
                     <div class="start">
-                        <div class="main-menu-button-left" onclick="toggle_settings()">
+                        <div class="main-menu-button-left" ontouchstart="toggle_settings()">
                             <img class="main-menu-bars" src="img/menu-ellipsis.png" />
                         </div>
-                        <div class="main-menu-button-right" onclick="toggle_menu()">
+                        <div class="main-menu-button-right" ontouchstart="toggle_menu()">
                             <img class="main-menu-icon" src="img/menu-icon-1.png" />
                         </div>
                         <img class="main-logo-lunch" src="img/logo-lunch.png" />
-                        <div class="menu-title" id="todays-menu-date"><!-- ajax load date -->laddar meny</div>
-                        <div class="menu-slider" id="todays-menu">
-                            <img src="img/loader.gif">
+                        <div class="main-menu-container down">
+                            <div class="menu-title" id="todays-menu-date">
+                                <!-- ajax load date -->laddar meny
+                            </div>
+                            <div class="menu-slider" id="todays-menu"></div>
                         </div>
                     </div>
                 </div>
@@ -144,8 +152,8 @@
                 <input type="text" id="order-request" placeholder="Eventuella önskemål" />
                 <input type="hidden" id="order-course" />
             </div>
-            <div class="order-cancel" onclick="hide_message()">avbryt</div>
-            <div class="order-ok" onclick="place_order()">ok</div>
+            <div class="order-cancel" ontouchstart="hide_message()">avbryt</div>
+            <div class="order-ok" ontouchstart="place_order()">ok</div>
         </div>
         <div class="error-message">
             <p>Här kommer det visas ett felmeddelande</p>
