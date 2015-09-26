@@ -311,6 +311,37 @@ input:focus {
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-transition-duration: .35s;
 }
+.spinner {
+    position: relative;
+    width: 15vw;
+    height: 10vw;
+}
+.spinner.left {
+    float: left;
+    transform: rotate(90deg);
+}
+.spinner.right {
+    float: right;
+}
+.spinner.right.up {
+    -webkit-transition-duration: .7s;
+    transform: rotate(-90deg);
+}
+.spinner.right.down {
+    -webkit-transition-duration: .7s;
+    transform: rotate(90deg);
+}
+.spinner.left.up {
+    -webkit-transition-duration: .7s;
+    transform: rotate(90deg);
+}
+.spinner.left.down {
+    -webkit-transition-duration: .7s;
+    transform: rotate(-90deg);
+}
+.spinner img {
+    height: 5vw;
+}
 .menu-title {
     color: white;
     height: 10vw;

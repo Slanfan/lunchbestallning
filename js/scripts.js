@@ -2,9 +2,13 @@ function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
 		$('.main-menu-container').removeClass('down');
 		$('.main-menu-container').addClass('up');
+		$('.spinner').removeClass('up');
+		$('.spinner').addClass('down');
 	} else {
 		$('.main-menu-container').removeClass('up');
 		$('.main-menu-container').addClass('down');
+		$('.spinner').removeClass('down');
+		$('.spinner').addClass('up');
 	}
 }
 
@@ -100,10 +104,10 @@ function load_menu() {
 	tomorrow.setDate(tomorrow.getDate() + 1);
 	$('#todays-menu-date').empty();
     if(today.getHours() > 9) {
-    	$('#todays-menu-date').append('meny ' + tomorrow.getDate() + ' ' + month_names[tomorrow.getMonth()]);
+    	$('#todays-menu-date .text').append('meny ' + tomorrow.getDate() + ' ' + month_names[tomorrow.getMonth()]);
     	menu_date = tomorrow.getFullYear() + '-' + month_numbers[tomorrow.getMonth()] + '-' + zeroPad(tomorrow.getDate(), 2);
     } else {
-    	$('#todays-menu-date').append('meny ' + today.getDate() + ' ' + month_names[today.getMonth()]);
+    	$('#todays-menu-date .text').append('meny ' + today.getDate() + ' ' + month_names[today.getMonth()]);
     	menu_date = today.getFullYear() + '-' + month_numbers[today.getMonth()] + '-' + zeroPad(today.getDate(), 2);
     }
 
