@@ -299,7 +299,6 @@ input:focus {
     height: 62vw;
     width: 100vw;
     position: absolute;
-    background-color: rgba(0,0,0,0.4);
     z-index: 100;
     bottom: 0;
 }
@@ -311,36 +310,21 @@ input:focus {
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-transition-duration: .35s;
 }
-.spinner {
-    position: relative;
-    width: 15vw;
-    height: 10vw;
+.menu-arrow {
+    width: 0;
+    height: 0;
+    border-left: 10vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-bottom: 6vw solid rgba(156, 143, 51, 0.7);
+    margin-left: 42vw;
+    margin-top: -6vw;
+    -webkit-transition-duration: .35s;
+    transform: border;
 }
-.spinner.left {
-    float: left;
-    transform: rotate(90deg);
-}
-.spinner.right {
-    float: right;
-}
-.spinner.right.up {
-    -webkit-transition-duration: .7s;
-    transform: rotate(-90deg);
-}
-.spinner.right.down {
-    -webkit-transition-duration: .7s;
-    transform: rotate(90deg);
-}
-.spinner.left.up {
-    -webkit-transition-duration: .7s;
-    transform: rotate(90deg);
-}
-.spinner.left.down {
-    -webkit-transition-duration: .7s;
-    transform: rotate(-90deg);
-}
-.spinner img {
-    height: 5vw;
+.menu-arrow.up {
+    border-bottom: 0vw solid rgba(156, 143, 51, 0.7);
+    -webkit-transition-duration: .35s;
+    transform: border;
 }
 .menu-title {
     color: white;
@@ -349,12 +333,13 @@ input:focus {
     font-size: 4.5vw;
     font-family: sans-serif;
     text-align: center;
-    background-color: rgba(156, 143, 51, 0.5);
+    background-color: rgba(156, 143, 51, 0.7);
     /*margin-top: 72vw;*/
 }
 .menu-slider {
-    height: 42vw;
-    margin-top: 10vw;
+    background-color: rgba(0,0,0,0.4);
+    height: 60vw;
+    /*margin-top: 10vw;*/
     color: white;
     text-transform: none;
     text-align: center;

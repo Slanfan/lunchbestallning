@@ -2,13 +2,11 @@ function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
 		$('.main-menu-container').removeClass('down');
 		$('.main-menu-container').addClass('up');
-		$('.spinner').removeClass('up');
-		$('.spinner').addClass('down');
+		$('.menu-arrow').addClass('up');
 	} else {
 		$('.main-menu-container').removeClass('up');
 		$('.main-menu-container').addClass('down');
-		$('.spinner').removeClass('down');
-		$('.spinner').addClass('up');
+		$('.menu-arrow').removeClass('up');
 	}
 }
 
