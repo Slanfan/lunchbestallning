@@ -701,3 +701,109 @@ input:focus {
     -webkit-transform: translate3d(-86vw, 0, 0);
     -webkit-transition-duration: .35s;
 }
+
+
+/**********************************\
+ ----> FLIPPING HISTORY BOXES <----
+\**********************************/
+
+.order-container {
+    -webkit-perspective: 1000;
+}
+.order-container:hover .flipper, .order-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+.order-container {
+    position: relative;
+    display: inline-block;
+    margin: .5vw;
+}
+.order-container, .order-front, .order-back {
+    width: 20vw;
+    height: 20vw;
+}
+.order-front {
+    overflow: hidden;
+    background-color: #FBFBFB;
+    border: 1px solid #F7F7F7;
+}
+.order-back {
+    overflow: hidden;
+    background-color: green;
+    background-color: #F0F0F0;
+    border: 1px solid #E7E7E7;
+}
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.order-front, .order-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.order-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.order-back {
+    transform: rotateY(180deg);
+}
+.order-status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    margin: 1vw;
+}
+.order-status img {
+    height: 6vw;
+}
+.order-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    padding: 1vw;
+}
+.order-type img {
+    width: 12vw;
+    margin: 3vw;
+}
+.order-date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: large;
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    padding: 1vw;
+}
+.order-date.green {
+    background-color: #A3D8A5;
+    z-index: 20;
+}
+.order-date.orange {
+    background-color: #FFD899;
+}
+.order-date.red {
+    background-color: #FFB4AF;
+}
+.order-crouse-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 2vw;
+    text-align: center;
+    color: #4E4D4D;
+    font-family: sans-serif;
+    font-size: 2.5vw;
+}
