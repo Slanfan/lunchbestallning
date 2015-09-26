@@ -711,7 +711,7 @@ input:focus {
     -webkit-perspective: 1000;
 }
 .order-container:hover .flipper, .order-container.hover .flipper {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 .order-container {
     position: relative;
@@ -719,8 +719,8 @@ input:focus {
     margin: .5vw;
 }
 .order-container, .order-front, .order-back {
-    width: 20vw;
-    height: 20vw;
+    width: 40vw;
+    height: 40vw;
 }
 .order-front {
     overflow: hidden;
@@ -734,8 +734,8 @@ input:focus {
     border: 1px solid #E7E7E7;
 }
 .flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
     position: relative;
 }
 .order-front, .order-back {
@@ -746,10 +746,10 @@ input:focus {
 }
 .order-front {
     z-index: 2;
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
 }
 .order-back {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 .order-status {
     position: absolute;
@@ -771,7 +771,7 @@ input:focus {
     padding: 1vw;
 }
 .order-type img {
-    width: 12vw;
+    width: 30vw;
     margin: 3vw;
 }
 .order-date {
@@ -783,7 +783,10 @@ input:focus {
     text-align: center;
     color: white;
     font-family: monospace;
-    padding: 1vw;
+    padding: 2vw;
+    height: 10vw;
+    line-height: 10vw;
+    font-size: 6vw;
 }
 .order-date.green {
     background-color: #A3D8A5;
