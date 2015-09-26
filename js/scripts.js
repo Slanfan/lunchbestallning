@@ -102,7 +102,7 @@ function load_menu() {
 	var today = new Date();
 	var tomorrow = new Date();
 	tomorrow.setDate(tomorrow.getDate() + 1);
-	$('#todays-menu-date').empty();
+	$('#todays-menu-date .text').empty();
     if(today.getHours() > 9) {
     	$('#todays-menu-date .text').append('meny ' + tomorrow.getDate() + ' ' + month_names[tomorrow.getMonth()]);
     	menu_date = tomorrow.getFullYear() + '-' + month_numbers[tomorrow.getMonth()] + '-' + zeroPad(tomorrow.getDate(), 2);
