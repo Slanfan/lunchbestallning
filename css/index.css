@@ -284,6 +284,7 @@ input:focus {
 .main-menu-button-left.full-height,
 .main-menu-button-right.full-height {
     height: 100vh;
+    z-index: 1000;
 }
 .main-menu-bars {
     height: 12vw;
@@ -296,14 +297,14 @@ input:focus {
     margin-right: 4vw;
 }
 .main-menu-container {
-    height: 62vw;
+    height: 70vw;
     width: 100vw;
     position: absolute;
     z-index: 100;
     bottom: 0;
 }
 .main-menu-container.down {
-    -webkit-transform: translate3d(0, 52vw, 0);
+    -webkit-transform: translate3d(0, 60vw, 0);
     -webkit-transition-duration: .35s;
 }
 .main-menu-container.up {
@@ -345,8 +346,9 @@ input:focus {
     text-align: center;
 }
 .menu-item-container.main {
-    height: 55vw;
+    height: 75vw;
     width: 100vw;
+    padding-top: 6vw
 }
 .image-wrapper.main {
     left: 35vw;
