@@ -355,6 +355,12 @@ input:focus {
     height: 62vw;
     width: 86vw;
 }
+.menu-restaurant {
+    height: 9vw;
+    font-size: 4.5vw;
+    padding: 1vw;
+    font-weight: 600;
+}
 .image-wrapper {
     background-color: rgba(66, 156, 121, 0.8);
     width: 30vw;
@@ -443,8 +449,8 @@ input:focus {
     padding: 10px;
     border-bottom-left-radius: 2.5vw;
     left: 15vw;
+    right: 50vw;
     top: 95.2vw;
-    width: 30vw;
     text-align: center;
     font-family: sans-serif;
     text-transform: uppercase;
@@ -457,9 +463,9 @@ input:focus {
     font-size: 4vw;
     padding: 10px;
     border-bottom-right-radius: 2.5vw;
+    left: 50.1vw;
     right: 15vw;
     top: 95.2vw;
-    width: 29.2vw;
     text-align: center;
     text-transform: uppercase;
     font-family: sans-serif;
