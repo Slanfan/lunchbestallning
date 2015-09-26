@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.slanfan.lunchbestallning"
         version   = "1.0.1">
-    <name>Lunchbeställning</name>
+    <name>Lunch?</name>
 
     <description>
         Enter description here...
