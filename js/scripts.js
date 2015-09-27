@@ -20,7 +20,7 @@ function toggle_login() {
 	}
 }
 
-function toggle_registration() {
+function toggle_about() {
 	if($('#registration').hasClass('right')) {
 		$('#registration').removeClass('right');
 		$('#registration').addClass('center');

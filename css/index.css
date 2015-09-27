@@ -70,6 +70,7 @@ body {
     width: 86vw;
     height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
 #main-center {
@@ -231,7 +232,7 @@ input:focus {
     bottom: 0;
     top: 0;
 }
-.start-help {
+.start-about {
     position: absolute;
     width: 50vw;
     background-color: #202020;
@@ -249,7 +250,7 @@ input:focus {
 .start-login:active  {
     background-color: #9EAF3A;
 }
-.start-help:active {
+.start-about:active {
     background-color: #303030;
 }
 .back-button {
@@ -319,7 +320,7 @@ input:focus {
     border-left: 10vw solid transparent;
     border-right: 10vw solid transparent;
     border-bottom: 6vw solid rgba(156, 143, 51, 0.7);
-    margin-left: 42vw;
+    margin-left: 40vw;
     margin-top: -6vw;
     -webkit-transition-duration: .35s;
     transform: border;
@@ -613,10 +614,14 @@ input:focus {
 }
 
 /* ORDER HISTORY */
+#history-orders {
+    display: inline-block;
+    margin-top: 10vw;
+}
 .order-container {
     position: relative;
     display: inline-block;
-    width: 100%;
+    width: 98%;
     margin-left: -2vw;
     padding: 2vw;
     background-color: #FBFBFB;
@@ -660,7 +665,7 @@ input:focus {
 }
 .order-container .description {
     float: left;
-    width: 60vw;
+    width: 55vw;
     font-size: 3vw;
     padding-left: 2vw;
 }
