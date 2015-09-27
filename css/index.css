@@ -69,6 +69,8 @@ body {
     left: 0;
     width: 86vw;
     height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 #main-center {
     position: absolute;
@@ -552,14 +554,15 @@ input:focus {
     display: inline-block;
     height: 92vw;
     width: 82vw;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    /*overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;*/
 }
 #logout {
     position: absolute;
     left: 0;
     bottom: 0;
     background-color: #AA3939;
+    z-index: 1000;
 }
 .user-data .title {
     text-transform: uppercase;
@@ -646,10 +649,49 @@ input:focus {
     vertical-align: top;
     text-align: right;
 }
-.canceled {
-    text-decoration: line-through;
+.order-container {
+    display: inline-block;
+    width: 100%;
+    margin-left: -2vw;
+    padding: 2vw;
+    background-color: #FBFBFB;
+    border: 1px solid #F7F7F7;
 }
-
+.date-container.confirmed {
+    float: left;
+    background-color: #A3D8A5;
+    width: 15vw;
+    height: 20vw;
+}
+.date-container.unconfirmed {
+    float: left;
+    background-color: #FFD899;
+    width: 15vw;
+    height: 20vw;
+}
+.date-container.canceled {
+    float: left;
+    background-color: #FFB4AF;
+    width: 15vw;
+    height: 20vw;
+}
+.order-container.icon {
+    float: left;
+}
+.order-container.icon img, .order-container.icon object {
+    height: 12vw;
+}
+.order-container.description {
+    float: left;
+}
+.order-container.status {
+    position: absolute;
+    right: 1vw;
+    top: 1vw;    
+}
+.order-container.status img {
+    height: 6vw;
+}
 
 #start.visible,
 .info-container.visible {
