@@ -558,11 +558,9 @@ input:focus {
     -webkit-overflow-scrolling: touch;*/
 }
 #logout {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    margin-top: 15vw;
+    position: relative;
     background-color: #AA3939;
-    z-index: 1000;
 }
 .user-data .title {
     text-transform: uppercase;
@@ -613,43 +611,10 @@ input:focus {
     text-align: right;
     width: 36%;
 }
-#history-orders {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 20vw;
-}
-#history-orders li {
-    width: 100%;
-    border-top: 1px solid #C5C5C5;
-}
-.load-more {
-    background-color: rgb(225, 225, 225);
-    width: 100%;
-    text-align: center;
-}
-.load-more img {
-    height: 10vw;
-    -webkit-transform: rotate(-90deg);
-}
-.order-timestamp {
-    display: inline-block;
-    margin: 0;
-}
-.order-course {
-    text-transform: none;
-    display: inline-block; 
-    width: 75%;
-    vertical-align: top;
-    font-size: 3.5vw;
-}
-.order-amount {
-    display: inline-block;
-    text-transform: none;
-    width: 23%;
-    vertical-align: top;
-    text-align: right;
-}
+
+/* ORDER HISTORY */
 .order-container {
+    position: relative;
     display: inline-block;
     width: 100%;
     margin-left: -2vw;
@@ -657,41 +622,58 @@ input:focus {
     background-color: #FBFBFB;
     border: 1px solid #F7F7F7;
 }
-.date-container.confirmed {
+.date-container.confirmed, .date-container.unconfirmed, .date-container.canceled {
+    text-align: center;
     float: left;
-    background-color: #A3D8A5;
-    width: 15vw;
+    width: 17vw;
     height: 20vw;
+}
+.date-container.confirmed {
+    background-color: #A3D8A5;
 }
 .date-container.unconfirmed {
-    float: left;
+    background-color: #A3D8A5;
     background-color: #FFD899;
-    width: 15vw;
-    height: 20vw;
 }
 .date-container.canceled {
-    float: left;
     background-color: #FFB4AF;
-    width: 15vw;
-    height: 20vw;
 }
-.order-container.icon {
+.date-container .year {
+    font-size: 3vw;
+    padding: 0.2vw;
+    font-weight: 800;
+}
+.date-container .day {
+    font-size: 12vw;
+    font-weight: 800;
+    margin-top: -2vw
+}
+.date-container .month {
+    font-size: 3vw;
+    margin-top: -2vw
+}
+.order-container .icon {
     float: left;
 }
-.order-container.icon img, .order-container.icon object {
+.order-container .icon img, .order-container .icon object {
     height: 12vw;
 }
-.order-container.description {
+.order-container .description {
     float: left;
+    width: 60vw;
+    font-size: 3vw;
+    padding-left: 2vw;
 }
-.order-container.status {
+.order-container .status {
     position: absolute;
     right: 1vw;
-    top: 1vw;    
+    top: 1vw;  
+    z-index: 10;
 }
-.order-container.status img {
+.order-container .status img {
     height: 6vw;
 }
+/* END ORDER HISTORY */
 
 #start.visible,
 .info-container.visible {
@@ -744,7 +726,43 @@ input:focus {
     -webkit-transition-duration: .35s;
 }
 
-
+/*
+#history-orders {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20vw;
+}
+#history-orders li {
+    width: 100%;
+    border-top: 1px solid #C5C5C5;
+}
+.load-more {
+    background-color: rgb(225, 225, 225);
+    width: 100%;
+    text-align: center;
+}
+.load-more img {
+    height: 10vw;
+    -webkit-transform: rotate(-90deg);
+}
+.order-timestamp {
+    display: inline-block;
+    margin: 0;
+}
+.order-course {
+    text-transform: none;
+    display: inline-block; 
+    width: 75%;
+    vertical-align: top;
+    font-size: 3.5vw;
+}
+.order-amount {
+    display: inline-block;
+    text-transform: none;
+    width: 23%;
+    vertical-align: top;
+    text-align: right;
+}
 /**********************************\
  ----> FLIPPING HISTORY BOXES <----
 \**********************************/
