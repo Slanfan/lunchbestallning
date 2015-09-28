@@ -2,7 +2,7 @@ function add_swipe_to(selector) {
 	$(selector).swipe("destroy");
 	$(selector).swipe({
 
-        swipeLeft: function(event, phase, direction, distance, duration, fingerCount) {
+        swipe: function(event, phase, direction, distance, duration, fingerCount) {
 		console.log(distance);
 			if (phase == "move") {
 				if (direction == "left") {
@@ -37,7 +37,7 @@ $('#order-history').delegate('action', 'click', function() {
 	var order_id = $(this).data('action');
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
 	var data = { "order_id": order_id };
-	
+
 	switch (action) {
 		case cancel:
 			// send order
