@@ -1,38 +1,69 @@
-$(function() {      
-    //Enable swiping...
-    var addSwipeTo = function(selector) {  
-    	$(selector).swipe("destroy");
-		$(selector).swipe({
-            swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
-			console.log(distance);
-				if (phase == "move") {
-					if (direction == "left") {
-						$(this).css({
-							'left' : (distance*-1)+'px'
-						});  
-					}
-				} 
-				else if (phase == "cancel") {
-					$(this).animate({
-						'left' : 0
-					}, 300);
-				} 
-				else if (phase == "end") {
-					$(this).animate({
-						'left' : '-65vw'
-					}, 200);
-				} 
-				else {
-					//???
+function addSwipeTo(selector) {  
+	$(selector).swipe("destroy");
+	$(selector).swipe({
+        swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+		console.log(distance);
+			if (phase == "move") {
+				if (direction == "left") {
+					$(this).css({
+						'left' : (distance*-1)+'px'
+					});  
 				}
-			},
-			threshold: 150,
-			maxTimeThreshold: 5000,
-			fingers: 'all'
-		});
-    };
-    addSwipeTo(".swipeable");
-});
+			} 
+			else if (phase == "cancel") {
+				$(this).animate({
+					'left' : 0
+				}, 300);
+			} 
+			else if (phase == "end") {
+				$(this).animate({
+					'left' : '-65vw'
+				}, 200);
+			} 
+			else {
+				//???
+			}
+		},
+		threshold: 150,
+		maxTimeThreshold: 5000,
+		fingers: 'all'
+	});
+};
+
+// $(function() {      
+//     //Enable swiping...
+//     var addSwipeTo = function(selector) {  
+//     	$(selector).swipe("destroy");
+// 		$(selector).swipe({
+//             swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+// 			console.log(distance);
+// 				if (phase == "move") {
+// 					if (direction == "left") {
+// 						$(this).css({
+// 							'left' : (distance*-1)+'px'
+// 						});  
+// 					}
+// 				} 
+// 				else if (phase == "cancel") {
+// 					$(this).animate({
+// 						'left' : 0
+// 					}, 300);
+// 				} 
+// 				else if (phase == "end") {
+// 					$(this).animate({
+// 						'left' : '-65vw'
+// 					}, 200);
+// 				} 
+// 				else {
+// 					//???
+// 				}
+// 			},
+// 			threshold: 150,
+// 			maxTimeThreshold: 5000,
+// 			fingers: 'all'
+// 		});
+//     };
+// });
 
 // $(function() {
 // 	$('.swipeable').swipe({
