@@ -1,3 +1,34 @@
+$(function() {
+	$('.swipeable').swipe({
+		swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+			console.log(distance);
+			if (phase == "move") {
+				if (direction == "left") {
+					$(this).css({
+						'left' : (distance*-1)+'px'
+					});  
+				}
+			} 
+			else if (phase == "cancel") {
+				$(this).animate({
+					'left' : 0
+				}, 300);
+			} 
+			else if (phase == "end") {
+				$(this).animate({
+					'left' : '-90vw'
+				}, 200);
+			} 
+			else {
+				//???
+			}
+		},
+		threshold: 150,
+		maxTimeThreshold: 5000,
+		fingers: 'all'
+	});
+});
+
 function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
 		$('.main-menu-container').removeClass('down');

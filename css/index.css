@@ -587,10 +587,7 @@ input:focus {
     padding: 2vw;
     background-color: #F0F0F0;
     display: inline-block;
-    /*height: 92vw;*/
     width: 82vw;
-    /*overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;*/
 }
 #logout {
     margin-top: 15vw;
@@ -652,6 +649,12 @@ input:focus {
     display: inline-block;
     margin-top: 10vw;
 }
+.swipe-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    min-height: 20vw;
+}
 .order-container {
     position: relative;
     display: inline-block;
@@ -660,6 +663,31 @@ input:focus {
     padding: 2vw;
     background-color: #FBFBFB;
     border: 1px solid #F7F7F7;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+.order-container.swipable {
+    z-index: 10;
+}
+.swipe-wrapper .action-container {
+    position: absolute;
+    top: 0;
+    right: -2vw;
+    bottom: 1vw;
+    background-color: red;
+    z-index: 5;
+}
+.action-container .action {
+    width: 16vw;
+    height: 16vw;
+    background: #cecece;
+    border-radius: 16vw;
+    margin: 5vw;
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.action-container .action img {
+    height: 8vw;
+    padding: 3vw;
 }
 .date-container.confirmed, .date-container.unconfirmed, .date-container.canceled {
     text-align: center;
