@@ -30,7 +30,7 @@ function add_swipe_to(selector) {
 	});
 };
 
-$('.action').delegate('click' ,function() {
+$('.action-container').delegate('action', 'click', function() {
 	var action = $(this).data('action');
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
 	var data = { "order_id": $(this).data('order_id') };
