@@ -665,7 +665,7 @@ input:focus {
     border: 1px solid #F7F7F7;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 }
-.order-container.swipable {
+.order-container.swipeable {
     z-index: 10;
 }
 .swipe-wrapper .action-container {
@@ -673,7 +673,6 @@ input:focus {
     top: 0;
     right: -2vw;
     bottom: 1vw;
-    background-color: red;
     z-index: 5;
 }
 .action-container .action {

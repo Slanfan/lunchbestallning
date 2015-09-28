@@ -1,33 +1,69 @@
-$(function() {
-	$('.swipeable').swipe({
-		swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+$(function() {      
+    //Enable swiping...
+    var addSwipeTo = function(selector) {  
+    	$(selector).swipe("destroy");
+		$(selector).swipe({
+            swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
 			console.log(distance);
-			if (phase == "move") {
-				if (direction == "left") {
-					$(this).css({
-						'left' : (distance*-1)+'px'
-					});  
+				if (phase == "move") {
+					if (direction == "left") {
+						$(this).css({
+							'left' : (distance*-1)+'px'
+						});  
+					}
+				} 
+				else if (phase == "cancel") {
+					$(this).animate({
+						'left' : 0
+					}, 300);
+				} 
+				else if (phase == "end") {
+					$(this).animate({
+						'left' : '-65vw'
+					}, 200);
+				} 
+				else {
+					//???
 				}
-			} 
-			else if (phase == "cancel") {
-				$(this).animate({
-					'left' : 0
-				}, 300);
-			} 
-			else if (phase == "end") {
-				$(this).animate({
-					'left' : '-90vw'
-				}, 200);
-			} 
-			else {
-				//???
-			}
-		},
-		threshold: 150,
-		maxTimeThreshold: 5000,
-		fingers: 'all'
-	});
+			},
+			threshold: 150,
+			maxTimeThreshold: 5000,
+			fingers: 'all'
+		});
+    };
+    addSwipeTo(".swipeable");
 });
+
+// $(function() {
+// 	$('.swipeable').swipe({
+// 		swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+// 			console.log(distance);
+// 			if (phase == "move") {
+// 				if (direction == "left") {
+// 					$(this).css({
+// 						'left' : (distance*-1)+'px'
+// 					});  
+// 				}
+// 			} 
+// 			else if (phase == "cancel") {
+// 				$(this).animate({
+// 					'left' : 0
+// 				}, 300);
+// 			} 
+// 			else if (phase == "end") {
+// 				$(this).animate({
+// 					'left' : '-65vw'
+// 				}, 200);
+// 			} 
+// 			else {
+// 				//???
+// 			}
+// 		},
+// 		threshold: 150,
+// 		maxTimeThreshold: 5000,
+// 		fingers: 'all'
+// 	});
+// });
 
 function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
@@ -105,6 +141,7 @@ function load_order_logg() {
 		console.log(data);
 		$('#order-history').empty();
 		$('#order-history').append(data);
+		addSwipeTo(".swipeable");
 	});	
 }
 function load_more(start_num) {
@@ -116,6 +153,7 @@ function load_more(start_num) {
 	$.get(url, function(data){
 		console.log(data);
 		$('#history-orders').append(data)
+		addSwipeTo(".swipeable");
 	});
 }
 function zeroPad(num, places) {
