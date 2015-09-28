@@ -66,7 +66,7 @@ $('.action').delegate('click' ,function() {
 			});
 			break;
 	}
-}
+});
 
 function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
