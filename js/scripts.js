@@ -39,6 +39,7 @@ $('#order-history').delegate('.action', 'click', function() {
 	var order_id = $(this).data('order_id');
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
 	var data = { "order_id": order_id };
+	var $selector = $(this);
 
 	switch (action) {
 		case 'cancel':
@@ -54,8 +55,8 @@ $('#order-history').delegate('.action', 'click', function() {
 						// check response
 						if(data.responseJSON.result == 'success') {
 							// remove element
+							$selector.closest('.swipe-wrapper').remove();
 							console.log('Order: ' + order_id + ' canceled!');
-							$(this).closest('.swipe-wrapper').remove();
 						} else {
 							// show error message
 							$('.error-message p').empty();
