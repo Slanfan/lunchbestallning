@@ -4,22 +4,24 @@ function add_swipe_to(selector) {
 
         swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
 		console.log(distance);
-			// if (phase == "move") {
+			if (phase == "move") {
 				if (direction == "left") {
 					$(this).css({
 						'left' : (distance*-1)+'px'
 					});  
 				}
-			// } 
+			} 
 			else if (phase == "cancel") {
 				$(this).animate({
 					'left' : 0
 				}, 300);
 			} 
 			else if (phase == "end") {
-				$(this).animate({
-					'left' : '-60vw'
-				}, 200);
+				if (direction == "left") {
+					$(this).animate({
+						'left' : '-60vw'
+					}, 200);
+				}
 			} 
 			else {
 				//???
@@ -39,7 +41,7 @@ $('#order-history').delegate('.action', 'click', function() {
 	var data = { "order_id": order_id };
 
 	switch (action) {
-		case cancel:
+		case 'cancel':
 			// send order
 			$.ajax({
 				url: url,
@@ -68,7 +70,7 @@ $('#order-history').delegate('.action', 'click', function() {
 				}
 			});
 			break;
-		case hide:
+		case 'hide':
 			// code here
 			break;
 	}
