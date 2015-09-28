@@ -35,8 +35,8 @@ $('.action').delegate('click' ,function() {
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
 	var data = { "order_id": $(this).data('order_id') };
 
-	switch action {
-		case: cancel
+	switch (action) {
+		case cancel:
 			// send order
 			$.ajax({
 				url: url,
@@ -64,6 +64,9 @@ $('.action').delegate('click' ,function() {
 					}
 				}
 			});
+			break;
+		case hide:
+			// code here
 			break;
 	}
 });
