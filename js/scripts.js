@@ -140,7 +140,7 @@ function place_order() {
 	var course_id = $('#order-course').val();
 	var course_request = $('#order-request').val();
 	var url = 'http://www.lunchbestallning.se/app/place_order.php';
-	var data = { "course_id": course_id, "request": course_request, "username": localStorage.getItem("username"), "employee-number": localStorage.getItem("employee_number") };
+	var data = { "course_id": course_id, "request": course_request, "username": localStorage.getItem("username"), "employee-number": localStorage.getItem("employee-number") };
 
 	// send order
 	$.ajax({
