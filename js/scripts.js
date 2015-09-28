@@ -30,46 +30,38 @@ function add_swipe_to(selector) {
 	});
 };
 
-$('.action').click(function() {
-	var action = $(this).data('action');
-	var order_id = $(this).data('order');
-	switch(action) {
-		case cancel:
-			var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
-			var data = { "order_id": order_id };
+function cancel_order(order_id) {
+	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
+	var data = { "order_id": order_id };
 
-			// send order
-			$.ajax({
-				url: url,
-				data: data,
-				dataType: "json",
-				type: "GET",
-				complete: function(data) {
-					// check response
-					if ( data.status >= 200 && data.status < 300 || data.status === 304 ) {
-						// check response
-						if(data.responseJSON.result == 'success') {
-							// show success message
-							$(this).closest('.swipeable').remove();
-						} else {
-							// show error message
-							$('.error-message p').empty();
-							$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
-							$('.error-message').show('drop', { direction: "right" }, 500);
-						}
-					} else {
-						// show error message
-						$('.error-message p').empty();
-						$('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
-						$('.error-message').show('drop', { direction: "right" }, 500);
-					}
+	// send order
+	$.ajax({
+		url: url,
+		data: data,
+		dataType: "json",
+		type: "GET",
+		complete: function(data) {
+			// check response
+			if ( data.status >= 200 && data.status < 300 || data.status === 304 ) {
+				// check response
+				if(data.responseJSON.result == 'success') {
+					// show success message
+					$(this).closest('.swipeable').remove();
+				} else {
+					// show error message
+					$('.error-message p').empty();
+					$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
+					$('.error-message').show('drop', { direction: "right" }, 500);
 				}
-			});
-			break;
-		case hide:
-			break;
-	}
-});
+			} else {
+				// show error message
+				$('.error-message p').empty();
+				$('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
+				$('.error-message').show('drop', { direction: "right" }, 500);
+			}
+		}
+	});
+}
 
 function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
