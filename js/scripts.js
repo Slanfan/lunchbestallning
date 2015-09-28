@@ -46,7 +46,7 @@ function cancel_order(order_id) {
 				// check response
 				if(data.responseJSON.result == 'success') {
 					// show success message
-					$(this).closest('.swipeable').remove();
+					$(this).closest('.order-container').remove();
 				} else {
 					// show error message
 					$('.error-message p').empty();
