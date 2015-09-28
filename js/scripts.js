@@ -2,7 +2,7 @@ function add_swipe_to(selector) {
 	$(selector).swipe("destroy");
 	$(selector).swipe({
 
-        swipe: function(event, phase, direction, distance, duration, fingerCount) {
+        swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
 		console.log(distance);
 			if (phase == "move") {
 				if (direction == "left") {
