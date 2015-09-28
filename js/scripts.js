@@ -34,7 +34,7 @@ function add_swipe_to(selector) {
 	});
 };
 
-$('.action').live('click', function() {
+$('#order-history').delegate('.action', 'click', function() {
 	var action = $(this).data('action');
 	var order_id = $(this).data('order_id');
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
@@ -54,8 +54,8 @@ $('.action').live('click', function() {
 						// check response
 						if(data.responseJSON.result == 'success') {
 							// remove element
-							$(this).closest('.swipe-wrapper').remove();
 							console.log('Order: ' + order_id + ' canceled!');
+							$(this).closest('.swipe-wrapper').remove();
 						} else {
 							// show error message
 							$('.error-message p').empty();
