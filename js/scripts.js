@@ -1,4 +1,4 @@
-function addSwipeTo(selector) {  
+function add_swipe_to(selector) {  
 	$(selector).swipe("destroy");
 	$(selector).swipe({
         swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
@@ -17,84 +17,59 @@ function addSwipeTo(selector) {
 			} 
 			else if (phase == "end") {
 				$(this).animate({
-					'left' : '-65vw'
+					'left' : '-60vw'
 				}, 200);
 			} 
 			else {
 				//???
 			}
 		},
-		threshold: 150,
+		threshold: 75,
 		maxTimeThreshold: 5000,
 		fingers: 'all'
 	});
 };
 
-// $(function() {      
-//     //Enable swiping...
-//     var addSwipeTo = function(selector) {  
-//     	$(selector).swipe("destroy");
-// 		$(selector).swipe({
-//             swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
-// 			console.log(distance);
-// 				if (phase == "move") {
-// 					if (direction == "left") {
-// 						$(this).css({
-// 							'left' : (distance*-1)+'px'
-// 						});  
-// 					}
-// 				} 
-// 				else if (phase == "cancel") {
-// 					$(this).animate({
-// 						'left' : 0
-// 					}, 300);
-// 				} 
-// 				else if (phase == "end") {
-// 					$(this).animate({
-// 						'left' : '-65vw'
-// 					}, 200);
-// 				} 
-// 				else {
-// 					//???
-// 				}
-// 			},
-// 			threshold: 150,
-// 			maxTimeThreshold: 5000,
-// 			fingers: 'all'
-// 		});
-//     };
-// });
+$('.action').click(function() {
+	var action = $(this).data('action');
+	var order_id = $(this).data('order');
+	switch(action) {
+		case cancel:
+			var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
+			var data = { "order_id": order_id };
 
-// $(function() {
-// 	$('.swipeable').swipe({
-// 		swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
-// 			console.log(distance);
-// 			if (phase == "move") {
-// 				if (direction == "left") {
-// 					$(this).css({
-// 						'left' : (distance*-1)+'px'
-// 					});  
-// 				}
-// 			} 
-// 			else if (phase == "cancel") {
-// 				$(this).animate({
-// 					'left' : 0
-// 				}, 300);
-// 			} 
-// 			else if (phase == "end") {
-// 				$(this).animate({
-// 					'left' : '-65vw'
-// 				}, 200);
-// 			} 
-// 			else {
-// 				//???
-// 			}
-// 		},
-// 		threshold: 150,
-// 		maxTimeThreshold: 5000,
-// 		fingers: 'all'
-// 	});
-// });
+			// send order
+			$.ajax({
+				url: url,
+				data: data,
+				dataType: "json",
+				type: "GET",
+				complete: function(data) {
+					// check response
+					if ( data.status >= 200 && data.status < 300 || data.status === 304 ) {
+						// check response
+						if(data.responseJSON.result == 'success') {
+							// show success message
+							$(this).closest('.swipeable').remove();
+						} else {
+							// show error message
+							$('.error-message p').empty();
+							$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
+							$('.error-message').show('drop', { direction: "right" }, 500);
+						}
+					} else {
+						// show error message
+						$('.error-message p').empty();
+						$('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
+						$('.error-message').show('drop', { direction: "right" }, 500);
+					}
+				}
+			});
+			break;
+		case hide:
+			break;
+	}
+});
 
 function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
@@ -172,7 +147,7 @@ function load_order_logg() {
 		console.log(data);
 		$('#order-history').empty();
 		$('#order-history').append(data);
-		addSwipeTo(".swipeable");
+		add_swipe_to(".swipeable");
 	});	
 }
 function load_more(start_num) {
@@ -184,7 +159,7 @@ function load_more(start_num) {
 	$.get(url, function(data){
 		console.log(data);
 		$('#history-orders').append(data)
-		addSwipeTo(".swipeable");
+		add_swipe_o(".swipeable");
 	});
 }
 function zeroPad(num, places) {
