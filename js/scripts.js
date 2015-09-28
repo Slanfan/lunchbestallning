@@ -1,7 +1,3 @@
-document.ontouchmove = function(event){
-    event.preventDefault();
-}
-
 function add_swipe_to(selector) {  
 	$(selector).swipe("destroy");
 	$(selector).swipe({
