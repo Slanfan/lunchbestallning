@@ -1,7 +1,8 @@
 function add_swipe_to(selector) {  
 	$(selector).swipe("destroy");
 	$(selector).swipe({
-        swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+
+        swipeLeft: function(event, phase, direction, distance, duration, fingerCount) {
 		console.log(distance);
 			if (phase == "move") {
 				if (direction == "left") {
@@ -26,15 +27,17 @@ function add_swipe_to(selector) {
 		},
 		threshold: 75,
 		maxTimeThreshold: 5000,
-		fingers: 'all'
+		fingers: 'all',
+		allowPageScroll: 'vertical'
 	});
 };
 
 $('#order-history').delegate('action', 'click', function() {
 	var action = $(this).data('action');
+	var order_id = $(this).data('action');
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
-	var data = { "order_id": $(this).data('order_id') };
-
+	var data = { "order_id": order_id };
+	
 	switch (action) {
 		case cancel:
 			// send order
