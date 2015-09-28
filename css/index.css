@@ -479,45 +479,81 @@ input:focus {
 .order-cancel:hover {
     background-color: #2F7B5E;
 }
-.error-message {
-    position: absolute;
-    top: 30vw;
-    left: 10vw;
-    right: 10vw;
-    height: 30vw;
-    background-color: #FFBFBF;
-    border-radius: 2.5vw;
-    border: solid 1px #F37575;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    display: none;
-}
-.error-message p {
-    padding: 2.5vw;
-    text-align: center;
-    font-size: 4vw;
-    color: #844242;
-    font-weight: 600;
-    text-transform: none;
-}
 .success-message {
     position: absolute;
+    text-align: center;
+    padding: 4vw;
     top: 30vw;
-    left: 10vw;
-    right: 10vw;
-    height: 30vw;
-    background-color: #E3FFEA;
-    border-radius: 2.5vw;
-    border: solid 1px #75F396;
+    left: 0vw;
+    right: 0vw;
+    color: white;
+    background-color: rgba(66, 156, 121, 0.95);
+    border-top: 2px solid rgb(62, 147, 114);
+    border-bottom: 2px solid rgb(62, 147, 114);
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
     display: none;
 }
 .success-message p {
+    position: relative;
     padding: 2.5vw;
     text-align: center;
     font-size: 4vw;
-    color: #428459;
     font-weight: 600;
     text-transform: none;
+}
+.success-message b {
+    color: black;
+    font-size: 5vw;
+}
+.success-message div {
+    position: relative;
+    display: inline-block;
+    width: 40vw;
+    border: 2px solid white;
+    background-color: rgba(78, 183, 142, 1);
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 2vw;
+    font-weight: 800;
+}
+.error-message {
+    position: absolute;
+    text-align: center;
+    padding: 4vw;
+    top: 30vw;
+    left: 0vw;
+    right: 0vw;
+    color: white;
+    background-color: rgba(225, 119, 119, 0.95);
+    border-top: 2px solid rgb(205, 108, 108);
+    border-bottom: 2px solid rgb(205, 108, 108);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    display: none;
+}
+.error-message p {
+    position: relative;
+    padding: 2.5vw;
+    text-align: center;
+    font-size: 4vw;
+    font-weight: 600;
+    text-transform: none;
+}
+.error-message b {
+    color: black;
+    font-size: 5vw;
+}
+.error-message div {
+    position: relative;
+    display: inline-block;
+    width: 40vw;
+    border: 2px solid white;
+    background-color: rgba(205, 108, 108, 1);
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 2vw;
+    font-weight: 800;
 }
 .info-container {
     display: inline-block;
