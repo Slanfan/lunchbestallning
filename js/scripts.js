@@ -4,13 +4,13 @@ function add_swipe_to(selector) {
 
         swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
 		console.log(distance);
-			if (phase == "move") {
+			// if (phase == "move") {
 				if (direction == "left") {
 					$(this).css({
 						'left' : (distance*-1)+'px'
 					});  
 				}
-			} 
+			// } 
 			else if (phase == "cancel") {
 				$(this).animate({
 					'left' : 0
@@ -32,7 +32,7 @@ function add_swipe_to(selector) {
 	});
 };
 
-$('#order-history').delegate('action', 'click', function() {
+$('#order-history').delegate('.action', 'click', function() {
 	var action = $(this).data('action');
 	var order_id = $(this).data('action');
 	var url = 'http://www.lunchbestallning.se/app/cancel_order.php';
