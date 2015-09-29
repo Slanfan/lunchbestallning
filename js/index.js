@@ -44,6 +44,10 @@ var app = {
 
         PushbotsPlugin.resetBadge();
 
+        PushbotsPlugin.getToken(function(token){
+            console.log(token);
+        });
+
         if(localStorage.getItem("username") != null) {
             console.log(localStorage.getItem("username"));
             $('#start').removeClass('visible');
