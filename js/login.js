@@ -38,12 +38,6 @@ function login() {
 			    localStorage.setItem("employee-number", data.responseJSON.number);
 			    localStorage.setItem("employee-name", data.responseJSON.fullname);
 			    localStorage.setItem("employee-email", data.responseJSON.email);
-                
-                // get push device token
-                PushbotsPlugin.getToken(function(token) {
-                    console.log(token);
-                    localStorage.setItem("pushToken", token);
-                });
 
                 // store users device token in database
                 if(PushbotsPlugin.isiOS()) {
