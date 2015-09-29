@@ -1,17 +1,3 @@
-// $(document).ready(function() {
-// 	//PushbotsPlugin.resetBadge(); /* uncomment before release */
-
-// 	if(localStorage.getItem("username") != null) {
-// 		console.log(localStorage.getItem("username"));
-// 		$('#start').removeClass('visible');
-// 		$('#start').addClass('hidden');
-// 		load_menu();
-// 		load_user_data();
-// 	} else {
-// 		// nothing, show login
-// 	}
-// });
-
 function login() {
 
 	// uppdatera textinfo och visa loader
@@ -52,7 +38,22 @@ function login() {
 			    localStorage.setItem("employee-number", data.responseJSON.number);
 			    localStorage.setItem("employee-name", data.responseJSON.fullname);
 			    localStorage.setItem("employee-email", data.responseJSON.email);
-			    PushbotsPlugin.setAlias(username);
+                
+                // ask for push
+                if(PushbotsPlugin.isiOS()){
+                    PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569", function() {
+                        PushbotsPlugin.getToken(function(token){
+                            console.log(token);
+                        });
+                    });
+                }
+                if(PushbotsPlugin.isAndroid()){
+                    PushbotsPlugin.initializeAndroid("55ea8c9b177959e3438b4569", "141134204992", function() {
+                        PushbotsPlugin.getToken(function(token){
+                            console.log(token);
+                        });
+                    });
+                }
 
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');

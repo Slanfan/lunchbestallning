@@ -34,26 +34,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-        if(PushbotsPlugin.isiOS()){
-            // lunchbestallning
-            PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
-        }
-        if(PushbotsPlugin.isAndroid()){
-            PushbotsPlugin.initializeAndroid("55ea8c9b177959e3438b4569", "141134204992");
-        }
-
-        PushbotsPlugin.resetBadge();
-
-        PushbotsPlugin.getToken(function(token){
-            console.log(token);
-        });
-
         if(localStorage.getItem("username") != null) {
             console.log(localStorage.getItem("username"));
             $('#start').removeClass('visible');
             $('#start').addClass('hidden');
             load_menu();
             load_user_data();
+            PushbotsPlugin.resetBadge();
         } else {
             // nothing, show login
         }
