@@ -118,14 +118,7 @@ function login() {
 }
 
 function logout() {
-
-	// remove stored userinformation
-	localStorage.removeItem("username");
-	localStorage.removeItem("company");
-	localStorage.removeItem("employee-number");
-	localStorage.removeItem("employee-name");
-	localStorage.removeItem("employee-email");
-    localStorage.removeItem("pushToken");
+    
     //Unregister device from Pushbots
     PushbotsPlugin.unregister();
 
@@ -155,6 +148,14 @@ function logout() {
             }
         }
     });
+
+    // remove stored userinformation
+    localStorage.removeItem("username");
+    localStorage.removeItem("company");
+    localStorage.removeItem("employee-number");
+    localStorage.removeItem("employee-name");
+    localStorage.removeItem("employee-email");
+    localStorage.removeItem("pushToken");
 
 	// hide login and hide main app
 	$('#start').removeClass('hidden');
