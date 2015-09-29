@@ -57,6 +57,7 @@ function login() {
                 pushData = { 'employee-number': localStorage.getItem('employee-number'), 'device-token': localStorage.getItem('pushToken'), 'platform': platform, 'platform-id': platformId };
                 $.ajax({
                     url: 'http://www.lunchbestallning.se/app/store-device-token-in-db.php',
+                    data: pushData,
                     dataType: 'json',
                     complete: function(returnData) {
                         if ( returnData.status >= 200 && returnData.status < 300 || returnData.status === 304 ) {
@@ -128,6 +129,7 @@ function logout() {
     pushData = { 'employee-number': localStorage.getItem('employee-number'), 'device-token': localStorage.getItem('pushToken'), 'platform': platform, 'platform-id': platformId };
     $.ajax({
         url: 'http://www.lunchbestallning.se/app/remove-device-token-from-db.php',
+        data: pushData,
         dataType: 'json',
         complete: function(returnData) {
             if ( returnData.status >= 200 && returnData.status < 300 || returnData.status === 304 ) {
