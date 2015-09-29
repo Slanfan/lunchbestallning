@@ -34,6 +34,14 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
+        // ask for push
+        if(PushbotsPlugin.isiOS()){
+            PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
+        }
+        if(PushbotsPlugin.isAndroid()){
+            PushbotsPlugin.initializeAndroid("55ea8c9b177959e3438b4569", "141134204992");
+        }
+
         if(localStorage.getItem("username") != null) {
             console.log(localStorage.getItem("username"));
             $('#start').removeClass('visible');

@@ -39,21 +39,37 @@ function login() {
 			    localStorage.setItem("employee-name", data.responseJSON.fullname);
 			    localStorage.setItem("employee-email", data.responseJSON.email);
                 
-                // ask for push
-                if(PushbotsPlugin.isiOS()){
-                    PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569", function() {
-                        PushbotsPlugin.getToken(function(token){
-                            console.log(token);
-                        });
-                    });
+                // get push device token
+                PushbotsPlugin.getToken(function(token) {
+                    console.log(token);
+                    localStorage.setItem("pushToken", token);
+                });
+
+                // store users device token in database
+                if(PushbotsPlugin.isiOS()) {
+                    var platform = 'iOs';
+                    var platformId = 0;
                 }
-                if(PushbotsPlugin.isAndroid()){
-                    PushbotsPlugin.initializeAndroid("55ea8c9b177959e3438b4569", "141134204992", function() {
-                        PushbotsPlugin.getToken(function(token){
-                            console.log(token);
-                        });
-                    });
+                if(PushbotsPlugin.isAndroid()) {
+                    var platform = 'Android';
+                    var platformId = 1;
                 }
+                pushData = { 'employee-number': localStorage.getItem('employee-number'), 'device-token': localStorage.getItem('pushToken'), 'platform': platform, 'platform-id': platformId };
+                $.ajax({
+                    url: 'http://www.lunchbestallning.se/app/store-device-token-in-db.php',
+                    dataType: 'json',
+                    complete: function(returnData) {
+                        if ( returnData.status >= 200 && returnData.status < 300 || returnData.status === 304 ) {
+                            if(data.responseJSON.result == 'success') {
+                                console.log('Device token stored in db successfully');
+                            } else {
+                                console.log('error storing device token in db');
+                            }
+                        } else {
+                            console.log('No connection when trying to store device token in db');
+                        }
+                    }
+                });
 
     			// update textinfo and fade out box
     			$('#info-text').text('inloggning lyckades');
@@ -96,6 +112,35 @@ function logout() {
 	localStorage.removeItem("employee-number");
 	localStorage.removeItem("employee-name");
 	localStorage.removeItem("employee-email");
+    localStorage.removeItem("pushToken");
+    //Unregister device from Pushbots
+    PushbotsPlugin.unregister();
+
+    // remove device from db
+    if(PushbotsPlugin.isiOS()) {
+        var platform = 'iOs';
+        var platformId = 0;
+    }
+    if(PushbotsPlugin.isAndroid()) {
+        var platform = 'Android';
+        var platformId = 1;
+    }
+    pushData = { 'employee-number': localStorage.getItem('employee-number'), 'device-token': localStorage.getItem('pushToken'), 'platform': platform, 'platform-id': platformId };
+    $.ajax({
+        url: 'http://www.lunchbestallning.se/app/remove-device-token-from-db.php',
+        dataType: 'json',
+        complete: function(returnData) {
+            if ( returnData.status >= 200 && returnData.status < 300 || returnData.status === 304 ) {
+                if(data.responseJSON.result == 'success') {
+                    console.log('Device token removed from db successfully');
+                } else {
+                    console.log('error removing device token from db');
+                }
+            } else {
+                console.log('No connection when trying to remove device token from db');
+            }
+        }
+    });
 
 	// hide login and hide main app
 	$('#start').removeClass('hidden');
