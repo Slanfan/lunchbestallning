@@ -5,6 +5,24 @@ function login() {
 	$('.info-container').addClass('visible');
 	$('#info-text').text('kontaktar server');
 
+    // ask for push
+    if(PushbotsPlugin.isiOS()){
+        PushbotsPlugin.initializeiOS("55ea8c9b177959e3438b4569");
+        // get push device token
+        PushbotsPlugin.getToken(function(token) {
+            console.log(token);
+            localStorage.setItem("pushToken", token);
+        });
+    }
+    if(PushbotsPlugin.isAndroid()){
+        PushbotsPlugin.initializeAndroid("55ea8c9b177959e3438b4569", "141134204992");
+        // get push device token
+        PushbotsPlugin.getToken(function(token) {
+            console.log(token);
+            localStorage.setItem("pushToken", token);
+        });
+    }
+
 	// get input information
 	var username = $('#username').val().toLowerCase();
     var password = $('#password').val();
