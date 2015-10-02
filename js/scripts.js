@@ -209,16 +209,29 @@ function load_menu() {
 	});
 }
 function confirm_order(course_id, course_description) {
-	// set course in form
-	$('#order-course').val(course_id);
-	$('#order-request').val('');
+	// // set course in form
+	// $('#order-course').val(course_id);
+	// $('#order-request').val('');
 
-	// load confirm message text
-	$('.order-message p').empty();
-	$('.order-message p').append('Vänligen bekräfta beställning av <span>' + course_description + '</span>');
+	// // load confirm message text
+	// $('.order-message p').empty();
+	// $('.order-message p').append('Vänligen bekräfta beställning av <span>' + course_description + '</span>');
 
-	// show confirm message
-	$('.order-overlay').fadeIn(250);
+	// // show confirm message
+	// $('.order-overlay').fadeIn(250);
+
+	var msg = 'Vänligen bekräfta beställning av ' + course_description;
+
+	navigator.notification.prompt(
+		message, 
+		promptCallback, 
+		'Beställ lunch', 
+		['Beställ', 'Avbryt'], 
+		'Önskelmål?'
+	);
+}
+function onPrompt(results) {
+    alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 }
 function place_order() {
 	// store variables
