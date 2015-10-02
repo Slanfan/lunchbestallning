@@ -223,7 +223,7 @@ function confirm_order(course_id, course_description) {
 	var msg = 'Vänligen bekräfta beställning av ' + course_description;
 
 	navigator.notification.prompt(
-		message, 
+		msg, 
 		promptCallback, 
 		'Beställ lunch', 
 		['Beställ', 'Avbryt'], 
