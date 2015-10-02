@@ -220,23 +220,36 @@ function confirm_order(course_id, course_description) {
 	// // show confirm message
 	// $('.order-overlay').fadeIn(250);
 
-	var msg = 'Vänligen bekräfta beställning av ' + course_description;
-
+	// set course in form
+	$('#order-course').val(course_id);
+	var msg = 'Vänligen bekräfta beställning av "' + course_description + '"';
+	// show dialog
 	navigator.notification.prompt(
 		msg, 
 		onPrompt, 
-		'Beställ lunch', 
+		'Beställ lunch?', 
 		['Beställ', 'Avbryt'], 
 		'Önskelmål?'
 	);
 }
 function onPrompt(results) {
-    alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+	// 1 = order | 2 = cancel
+    if(result.buttonIndex == 1) {
+    	var course_id = $('#order-course').val();
+    	var course_request = '';
+		if(results.input1 == 'Önskemål?') {
+			// nothing
+		} else {
+			course_request = results.input1;
+			place_order(course_id, course_request);
+		}
+    } else {
+    	// Nothing
+    	$('#order-course').val('');
+    }
 }
-function place_order() {
+function place_order(course_id, course_request) {
 	// store variables
-	var course_id = $('#order-course').val();
-	var course_request = $('#order-request').val();
 	var url = 'http://www.lunchbestallning.se/app/place_order.php';
 	var data = { "course_id": course_id, "request": course_request, "username": localStorage.getItem("username"), "employee-number": localStorage.getItem("employee-number") };
 
@@ -260,21 +273,39 @@ function place_order() {
 				// check response
 				if(data.responseJSON.result == 'success') {
 					// show success message
-					$('.success-message p').empty();
-					$('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
-					$('.success-message').show('drop', { direction: "right" }, 500);
+					// $('.success-message p').empty();
+					// $('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
+					// $('.success-message').show('drop', { direction: "right" }, 500);
+					navigator.notification.confirm(
+						'Din beställning har fått ordernummer: ' + data.responseJSON.order_number + ' och du kommer bli meddelad så fort den är bekräftad.',
+						place_order_callback,
+						'Beställning',
+						'Stäng'
+					);
 					load_order_logg();
 				} else {
 					// show error message
-					$('.error-message p').empty();
-					$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
-					$('.error-message').show('drop', { direction: "right" }, 500);
+					// $('.error-message p').empty();
+					// $('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
+					// $('.error-message').show('drop', { direction: "right" }, 500);
+					navigator.notification.confirm(
+						'Ett fel inträffade när din beställning skulle läggas.\nVänligen försök igen!',
+						place_order_callback,
+						'Beställning',
+						'Stäng'
+					);
 				}
 			} else {
 				// show error message
-				$('.error-message p').empty();
-				$('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
-				$('.error-message').show('drop', { direction: "right" }, 500);
+				// $('.error-message p').empty();
+				// $('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
+				// $('.error-message').show('drop', { direction: "right" }, 500);
+				navigator.notification.confirm(
+					'Ingen anslutning till servern.\nVänligen kontrollera din anslutning till internet.',
+					place_order_callback,
+					'Beställning',
+					'Stäng'
+				);
 			}
 		}
 	});
