@@ -202,7 +202,7 @@ button:active {
 }
 input {
     display: inline-block;
-    width: 100vw;
+    width: 98vw;
     height: 13vw;
     font-size: 6vw;
     background-color: #181818;

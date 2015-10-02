@@ -73,7 +73,7 @@ function login() {
                     dataType: 'json',
                     complete: function(returnData) {
                         if ( returnData.status >= 200 && returnData.status < 300 || returnData.status === 304 ) {
-                            if(data.responseJSON.result == 'success') {
+                            if(returnData.responseJSON.result == 'success') {
                                 console.log('Device token stored in db successfully');
                             } else {
                                 console.log('error storing device token in db');
@@ -138,7 +138,7 @@ function logout() {
         dataType: 'json',
         complete: function(returnData) {
             if ( returnData.status >= 200 && returnData.status < 300 || returnData.status === 304 ) {
-                if(data.responseJSON.result == 'success') {
+                if(returnData.responseJSON.result == 'success') {
                     console.log('Device token removed from db successfully');
                 } else {
                     console.log('error removing device token from db');

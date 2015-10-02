@@ -1,6 +1,6 @@
-$('.app-container').addEventListener('touchmove', function(event){
-    event.stopPropagation();
-});
+// $('.app-container').addEventListener('touchmove', function(event){
+//     event.stopPropagation();
+// });
 function add_swipe_to(selector) {  
 	$(selector).swipe("destroy");
 	$(selector).swipe({
