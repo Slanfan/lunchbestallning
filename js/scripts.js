@@ -234,7 +234,7 @@ function confirm_order(course_id, course_description) {
 }
 function onPrompt(results) {
 	// 1 = order | 2 = cancel
-    if(result.buttonIndex == 1) {
+    if(results.buttonIndex == 1) {
     	var course_id = $('#order-course').val();
     	var course_request = '';
 		if(results.input1 == 'Önskemål?') {
@@ -276,7 +276,7 @@ function place_order(course_id, course_request) {
 					// $('.success-message p').empty();
 					// $('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
 					// $('.success-message').show('drop', { direction: "right" }, 500);
-					navigator.notification.confirm(
+					navigator.notification.alert(
 						'Din beställning har fått ordernummer: ' + data.responseJSON.order_number + ' och du kommer bli meddelad så fort den är bekräftad.',
 						place_order_callback,
 						'Beställning',
@@ -288,7 +288,7 @@ function place_order(course_id, course_request) {
 					// $('.error-message p').empty();
 					// $('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
 					// $('.error-message').show('drop', { direction: "right" }, 500);
-					navigator.notification.confirm(
+					navigator.notification.alert(
 						'Ett fel inträffade när din beställning skulle läggas.\nVänligen försök igen!',
 						place_order_callback,
 						'Beställning',
@@ -300,7 +300,7 @@ function place_order(course_id, course_request) {
 				// $('.error-message p').empty();
 				// $('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
 				// $('.error-message').show('drop', { direction: "right" }, 500);
-				navigator.notification.confirm(
+				navigator.notification.alert(
 					'Ingen anslutning till servern.\nVänligen kontrollera din anslutning till internet.',
 					place_order_callback,
 					'Beställning',
@@ -309,6 +309,9 @@ function place_order(course_id, course_request) {
 			}
 		}
 	});
+}
+function place_order_callback() {
+	console.log('Dialog closed');
 }
 function hide_message() {
 	$('.order-overlay').fadeOut(250);
