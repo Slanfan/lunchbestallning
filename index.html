@@ -103,7 +103,7 @@
                         <div class="title">e-postadress</div>
                         <div class="info" id="employee-email"></div>
                     </div>
-                    <button type="button" ontouchstart="change_password()" id="change-password">byt lösenord</button>
+                    <button type="button" ontouchstart="toggle_password_changer()" id="change-password">byt lösenord</button>
                     <button type="button" ontouchstart="logout()" id="logout">logga ut</button>
                     <div id="order-history"></div><!-- History loaded by ajax into order-history div -->
                 </div>
@@ -137,6 +137,9 @@
                 </div>
             </div>
 
+        </div>
+        <div id="change-password-panel">
+            
         </div>
         <input type="hidden" id="order-course" />
 

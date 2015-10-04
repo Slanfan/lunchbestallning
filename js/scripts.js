@@ -213,7 +213,7 @@ function confirm_order(course_id, course_description) {
 	navigator.notification.prompt(
 		msg, 
 		onPrompt, 
-		'Beställ lunch?', 
+		['Beställ lunch?','test'],
 		['Beställ', 'Avbryt'], 
 		'Önskelmål?'
 	);
