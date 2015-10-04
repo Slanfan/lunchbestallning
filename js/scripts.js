@@ -1,6 +1,3 @@
-// $('.app-container').addEventListener('touchmove', function(event){
-//     event.stopPropagation();
-// });
 function add_swipe_to(selector) {  
 	$(selector).swipe("destroy");
 	$(selector).swipe({
@@ -36,7 +33,6 @@ function add_swipe_to(selector) {
 		allowPageScroll: 'vertical'
 	});
 };
-
 $('#order-history').delegate('.action', 'click', function() {
 	var action = $(this).data('action');
 	var order_id = $(this).data('order_id');
@@ -62,15 +58,21 @@ $('#order-history').delegate('.action', 'click', function() {
 							console.log('Order: ' + order_id + ' canceled!');
 						} else {
 							// show error message
-							$('.error-message p').empty();
-							$('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
-							$('.error-message').show('drop', { direction: "right" }, 500);
+							navigator.notification.alert(
+								'Ett fel inträffade när din beställning skulle läggas.\nVänligen försök igen!',
+								alertDismiss,
+								'Beställning',
+								'Stäng'
+							);
 						}
 					} else {
 						// show error message
-						$('.error-message p').empty();
-						$('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
-						$('.error-message').show('drop', { direction: "right" }, 500);
+						navigator.notification.alert(
+								'Ingen anslutning till servern.\nVänligen kontrollera din anslutning till internet.',
+								alertDismiss,
+								'Beställning',
+								'Stäng'
+							);
 					}
 				}
 			});
@@ -80,7 +82,6 @@ $('#order-history').delegate('.action', 'click', function() {
 			break;
 	}
 });
-
 function toggle_main_menu() {
 	if($('.main-menu-container').hasClass('down')) {
 		$('.main-menu-container').removeClass('down');
@@ -92,7 +93,6 @@ function toggle_main_menu() {
 		$('.menu-arrow').removeClass('up');
 	}
 }
-
 function toggle_login() {
 	if($('#login').hasClass('right')) {
 		$('#login').removeClass('right');
@@ -102,7 +102,6 @@ function toggle_login() {
 		$('#login').addClass('right');
 	}
 }
-
 function toggle_about() {
 	if($('#registration').hasClass('right')) {
 		$('#registration').removeClass('right');
@@ -112,7 +111,6 @@ function toggle_about() {
 		$('#registration').addClass('right');
 	}
 }
-
 function toggle_menu() {
 	if($('#main').hasClass('right')) {
 		$('#main').removeClass('right');
@@ -124,7 +122,6 @@ function toggle_menu() {
 		$('.main-menu-button-right').addClass('full-height');
 	}
 }
-
 function toggle_settings() {
 	if($('#order-history').html() == '') {
 		console.log('History is empty');
@@ -209,17 +206,6 @@ function load_menu() {
 	});
 }
 function confirm_order(course_id, course_description) {
-	// // set course in form
-	// $('#order-course').val(course_id);
-	// $('#order-request').val('');
-
-	// // load confirm message text
-	// $('.order-message p').empty();
-	// $('.order-message p').append('Vänligen bekräfta beställning av <span>' + course_description + '</span>');
-
-	// // show confirm message
-	// $('.order-overlay').fadeIn(250);
-
 	// set course in form
 	$('#order-course').val(course_id);
 	var msg = 'Vänligen bekräfta beställning av "' + course_description + '"';
@@ -236,13 +222,8 @@ function onPrompt(results) {
 	// 1 = order | 2 = cancel
     if(results.buttonIndex == 1) {
     	var course_id = $('#order-course').val();
-    	var course_request = '';
-		if(results.input1 == 'Önskemål?') {
-			// nothing
-		} else {
-			course_request = results.input1;
-			place_order(course_id, course_request);
-		}
+    	var course_request = results.input1;
+		place_order(course_id, course_request);
     } else {
     	// Nothing
     	$('#order-course').val('');
@@ -273,36 +254,27 @@ function place_order(course_id, course_request) {
 				// check response
 				if(data.responseJSON.result == 'success') {
 					// show success message
-					// $('.success-message p').empty();
-					// $('.success-message p').append('Din beställning har fått ordernummer: <b>' + data.responseJSON.order_number + '</b> och du kommer bli meddelad så fort den är bekräftad.');
-					// $('.success-message').show('drop', { direction: "right" }, 500);
 					navigator.notification.alert(
 						'Din beställning har fått ordernummer: ' + data.responseJSON.order_number + ' och du kommer bli meddelad så fort den är bekräftad.',
-						place_order_callback,
+						alertDismiss,
 						'Beställning',
 						'Stäng'
 					);
 					load_order_logg();
 				} else {
 					// show error message
-					// $('.error-message p').empty();
-					// $('.error-message p').append('Ett fel inträffade när din beställning skulle läggas.<br><b>Vänligen försök igen!</b>');
-					// $('.error-message').show('drop', { direction: "right" }, 500);
 					navigator.notification.alert(
 						'Ett fel inträffade när din beställning skulle läggas.\nVänligen försök igen!',
-						place_order_callback,
+						alertDismiss,
 						'Beställning',
 						'Stäng'
 					);
 				}
 			} else {
 				// show error message
-				// $('.error-message p').empty();
-				// $('.error-message p').append('Ingen anslutning till servern.<br><b>Vänligen kontrollera din anslutning till internet.</b>');
-				// $('.error-message').show('drop', { direction: "right" }, 500);
 				navigator.notification.alert(
 					'Ingen anslutning till servern.\nVänligen kontrollera din anslutning till internet.',
-					place_order_callback,
+					alertDismiss,
 					'Beställning',
 					'Stäng'
 				);
@@ -310,7 +282,7 @@ function place_order(course_id, course_request) {
 		}
 	});
 }
-function place_order_callback() {
+function alertDismiss() {
 	console.log('Dialog closed');
 }
 function hide_message() {
@@ -318,14 +290,6 @@ function hide_message() {
 	$('#order-request').val('');
 	$('#order-course').val('');
 }
-$('.error-message').click(function() {
-	// hide message
-	$(this).hide('drop', { direction: "left" }, 500);
-});
-$('.success-message').click(function() {
-	// hide message
-	$(this).hide('drop', { direction: "left" }, 500);
-});
 $('.menu-loader').click(function() {
 	// store selected date
 	var picked_date = $('.calendar').pickmeup('get_date', true);

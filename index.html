@@ -103,9 +103,9 @@
                         <div class="title">e-postadress</div>
                         <div class="info" id="employee-email"></div>
                     </div>
-                    <div id="order-history"></div><!-- History loaded by ajax into order-history div -->
-
+                    <button type="button" ontouchstart="change_password()" id="change-password">byt lösenord</button>
                     <button type="button" ontouchstart="logout()" id="logout">logga ut</button>
+                    <div id="order-history"></div><!-- History loaded by ajax into order-history div -->
                 </div>
                 <div id="main-center" data-identity="start-screen">
                     <div class="start">
@@ -138,23 +138,7 @@
             </div>
 
         </div>
-
-        <div class="order-overlay">
-            <div class="order-message">
-                <h3>lunchbeställning</h3>
-                <p></p>
-                <input type="text" id="order-request" placeholder="Eventuella önskemål" />
-                <input type="hidden" id="order-course" />
-            </div>
-            <div class="order-cancel" ontouchstart="hide_message()">avbryt</div>
-            <div class="order-ok" ontouchstart="place_order()">ok</div>
-        </div>
-        <div class="error-message">
-            <p>Här kommer det visas ett felmeddelande</p>
-        </div>
-        <div class="success-message">
-            <p>Här kommer det visas ett meddelande</p>
-        </div>
+        <input type="hidden" id="order-course" />
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
