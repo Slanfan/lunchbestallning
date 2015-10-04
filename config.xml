@@ -2,7 +2,7 @@
 <widget 
     xmlns           = "http://www.w3.org/ns/widgets"
     xmlns:gap       = "http://phonegap.com/ns/1.0"
-    xmlns:android   = "http://schemas.android.com/apk/res/android"
+    <!-- xmlns:android   = "http://schemas.android.com/apk/res/android" -->
     id              = "com.slanfan.lunchbestallning"
     version         = "1.0.1">
 
@@ -124,6 +124,7 @@
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
     <gap:plugin name="com.pushbots.push" version="1.2.7" source="plugins.cordova.io" />
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     
     
 
@@ -152,7 +153,8 @@
     </feature>
 
     <content src="index.html" />
+    <access origin="*.pushbots.com" />
+    <access origin="*.lunchbestallning.se" />
     <access origin="*" />
-	<access origin="*.pushbots.com" />
 
 </widget>
